@@ -18,8 +18,10 @@ public class Main {
     Acceuil Acceuil;
 
     Main() {
-        this.Profil = new Profil("Hello");
-        this.Plus = new Plus();
+    	this.Theme = new Theme("Theme");
+    	
+        this.Profil = new Profil("Profil");
+        this.Plus = new Plus("+");
 
         this.MidBase = new Midle(Plus);
         this.MidBase.setVisible(true);
@@ -44,6 +46,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        final Main main = new Main();
+        Main main = new Main();
+        main.Acceuil.setVisible(true);
     }
 }

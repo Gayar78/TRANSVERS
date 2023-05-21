@@ -6,8 +6,8 @@ import javax.swing.*;
 public class Plus extends JButton{
 	ArrayList<Midle> ListMidle;
 	
-	Plus(){
-		super();
+	Plus(String string){
+		super(string);
 		this.ListMidle = new ArrayList<>();
 	}
 	
@@ -15,7 +15,7 @@ public class Plus extends JButton{
 		addActionListener(e -> {
             String newMidleName = JOptionPane.showInputDialog("Nom du projet : ");
             Nav newNavBar = new Nav();
-            Plus newPlus = new Plus();
+            Plus newPlus = new Plus("+");
             Midle newMidle = new Midle(newMidleName,newNavBar,newPlus);
   
             newPlus.setBounds(350, 280, 100, 40);
