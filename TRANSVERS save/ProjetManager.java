@@ -13,9 +13,11 @@ public class ProjetManager {
     private static JPanel currentMiddlePanel;
     private static boolean isNightMode = false;
     private static Map<String, JPanel> projectMiddlePanels = new HashMap<>();
+    private static Map<String, JPanel> tableMiddlePanels = new HashMap<>();
     private static JPanel baseMiddlePanel;
     private static JPanel navigationBar;
     private static JPanel projectNavigationBar;
+    private static JPanel tableNavigationBar;
 
     public static void main(String[] args) {
         createAndShowGUI();
@@ -111,7 +113,7 @@ public class ProjetManager {
                 if (projectMiddlePanels.containsKey(projectName)) {
                     switchToProjectMiddlePanel(projectName);
                 } else {
-                    createProjectMiddlePanel(projectName);
+                    createTableMiddlePanel(projectName);
                 }
             }
         });
@@ -120,18 +122,41 @@ public class ProjetManager {
         rearrangeProjectButtons();
     }
 
-    private static void createTableButton(String projectName, String tableName) {
-        JButton tableButton = new JButton(tableName);
-        tableButton.addActionListener(new ActionListener() {
+    private static void createTableButton(String projectName) {
+    	JButton tableButton = new JButton(projectName);
+    	tableButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Perform action when table button is clicked
-                System.out.println("Tableau '" + tableName + "' clicked!");
+                createTableMiddlePanel(projectName);
             }
         });
-
-        JPanel projectMiddlePanel = projectMiddlePanels.get(projectName);
-        projectMiddlePanel.add(tableButton);
+    	
+    	baseMiddlePanel.add(tableButton, baseMiddlePanel.getComponentCount() - 1);
         rearrangeTableButtons(projectName);
+    	
+    }
+    private static void createCarteButton(String tableName) {
+        JButton carteButton = new JButton(tableName);
+        carteButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                createCarteMiddlePanel(tableName);
+            }
+        });
+        
+        baseMiddlePanel.add(carteButton, baseMiddlePanel.getComponentCount() - 1);
+        rearrangeCarteButtons(tableName);
+        
+    }
+    
+    private static void createClientButton(String tableName) {
+        JButton clientButton = new JButton(tableName);
+        clientButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                createClientMiddlePanel(tableName);
+            }
+        });
+        
+        baseMiddlePanel.add(clientButton, baseMiddlePanel.getComponentCount() - 1);
+        rearrangeClientButtons(tableName);
     }
 
     private static void rearrangeTableButtons(String projectName) {
@@ -145,6 +170,32 @@ public class ProjetManager {
 
         projectMiddlePanel.revalidate();
         projectMiddlePanel.repaint();
+    }
+    
+    private static void rearrangeCarteButtons(String projectName) {
+        JPanel tableMiddlePanel = tableMiddlePanels.get(projectName);
+        int buttonCount = tableMiddlePanel.getComponentCount();
+        int gridColumns = Math.min(buttonCount, 4);
+        int gridRows = (int) Math.ceil((double) buttonCount / gridColumns);
+
+        GridLayout gridLayout = new GridLayout(gridRows, gridColumns);
+        tableMiddlePanel.setLayout(gridLayout);
+
+        tableMiddlePanel.revalidate();
+        tableMiddlePanel.repaint();
+    }
+    
+    private static void rearrangeClientButtons(String projectName) {
+        JPanel tableMiddlePanel = projectMiddlePanels.get(projectName);
+        int buttonCount = tableMiddlePanel.getComponentCount();
+        int gridColumns = Math.min(buttonCount, 4);
+        int gridRows = (int) Math.ceil((double) buttonCount / gridColumns);
+
+        GridLayout gridLayout = new GridLayout(gridRows, gridColumns);
+        tableMiddlePanel.setLayout(gridLayout);
+
+        tableMiddlePanel.revalidate();
+        tableMiddlePanel.repaint();
     }
 
     private static JPanel createProjectNavigationBar(String projectName) {
@@ -165,7 +216,7 @@ public class ProjetManager {
         return projectNavigationBar;
     }
 
-    private static void createProjectMiddlePanel(String projectName) {
+    private static void createTableMiddlePanel(String projectName) {
         JPanel projectMiddlePanel = new JPanel(new BorderLayout());
 
         JPanel tableButtonPanel = new JPanel(new GridLayout(1, 1));
@@ -178,7 +229,7 @@ public class ProjetManager {
                 if (tableButtonPanel.getComponentCount() < MAX_TABLE_BUTTONS) {
                     String tableName = JOptionPane.showInputDialog(frame, "Nom du tableau :");
                     if (tableName != null && !tableName.trim().isEmpty()) {
-                        createTableButton(projectName, tableName);
+                        createTableButton(tableName);
                     }
                 }
             }
@@ -263,4 +314,108 @@ public class ProjetManager {
         frame.getContentPane().revalidate();
         frame.getContentPane().repaint();
     }
+
+private static void createCarteMiddlePanel(String tableName) {
+    JPanel carteMiddlePanel = new JPanel(new BorderLayout());
+    JPanel carteButtonPanel = new JPanel(new GridLayout(1, 1));
+    JScrollPane scrollPane = new JScrollPane(carteButtonPanel);
+    carteMiddlePanel.add(scrollPane, BorderLayout.CENTER);
+
+    JButton plusCarteButton = new JButton("Plus client");
+    plusCarteButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            if (carteButtonPanel.getComponentCount() < MAX_TABLE_BUTTONS) {
+                String carteName = JOptionPane.showInputDialog(frame, "Nom de la carte :");
+                if (carteName != null && !carteName.trim().isEmpty()) {
+                    createCarteButton(tableName);
+                }
+                String carteDesc = JOptionPane.showInputDialog(frame, "Description de la carte :");
+                if (carteDesc != null && !carteDesc.trim().isEmpty()) {
+                    createClientButton(tableName);
+                }
+            }
+        }
+        
+    });
+
+    carteButtonPanel.add(plusCarteButton);
+    currentMiddlePanel = carteMiddlePanel;
+    tableMiddlePanels.put(tableName, carteMiddlePanel);
+
+    switchToCarteMiddlePanel(tableName);
+}
+
+
+private static void switchToCarteMiddlePanel(String tableName) {
+    frame.getContentPane().removeAll();
+
+    JPanel contentPanel = new JPanel(new BorderLayout());
+    contentPanel.add(navigationBar, BorderLayout.NORTH);
+
+    JPanel cartePanel = new JPanel(new BorderLayout());
+
+    JPanel projectNavigationBar = createProjectNavigationBar(tableName);
+    cartePanel.add(projectNavigationBar, BorderLayout.NORTH);
+
+    JPanel projectMiddlePanel = projectMiddlePanels.get(tableName);
+    cartePanel.add(projectMiddlePanel, BorderLayout.CENTER);
+
+    contentPanel.add(cartePanel, BorderLayout.CENTER);
+
+    frame.getContentPane().add(contentPanel);
+    frame.getContentPane().revalidate();
+    frame.getContentPane().repaint();
+	}
+
+
+private static void createClientMiddlePanel(String tableName) {
+    JPanel clientMiddlePanel = new JPanel(new BorderLayout());
+    JPanel clientButtonPanel = new JPanel(new GridLayout(1, 1));
+    JScrollPane scrollPane = new JScrollPane(clientButtonPanel);
+    clientMiddlePanel.add(scrollPane, BorderLayout.CENTER);
+
+    JButton plusClientButton = new JButton("Plus client");
+    plusClientButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            if (clientButtonPanel.getComponentCount() < MAX_TABLE_BUTTONS) {
+                String clientName = JOptionPane.showInputDialog(frame, "Nom de l'utilisateur :");
+                if (clientName != null && !clientName.trim().isEmpty()) {
+                    createCarteButton(tableName);
+                }
+                String clientDesc = JOptionPane.showInputDialog(frame, "Status de l'utilisateur :");
+                if (clientDesc != null && !clientDesc.trim().isEmpty()) {
+                    createClientButton(tableName);
+                }
+            }
+        }
+        
+    });
+
+    clientButtonPanel.add(plusClientButton);
+    currentMiddlePanel = clientMiddlePanel;
+    tableMiddlePanels.put(tableName, clientMiddlePanel);
+
+    switchToClientMiddlePanel(tableName);
+}
+
+private static void switchToClientMiddlePanel(String tableName) {
+    frame.getContentPane().removeAll();
+
+    JPanel contentPanel = new JPanel(new BorderLayout());
+    contentPanel.add(navigationBar, BorderLayout.NORTH);
+
+    JPanel clientPanel = new JPanel(new BorderLayout());
+
+    JPanel projectNavigationBar = createProjectNavigationBar(tableName);
+    clientPanel.add(projectNavigationBar, BorderLayout.NORTH);
+
+    JPanel tableMiddlePanel = tableMiddlePanels.get(tableName);
+    clientPanel.add(tableMiddlePanel, BorderLayout.CENTER);
+
+    contentPanel.add(clientPanel, BorderLayout.CENTER);
+
+    frame.getContentPane().add(contentPanel);
+    frame.getContentPane().revalidate();
+    frame.getContentPane().repaint();
+	}
 }
