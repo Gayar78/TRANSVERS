@@ -1,4 +1,5 @@
 package Modele;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -9,9 +10,11 @@ public class Nav extends JPanel{
 	ArrayList<JButton>ListeBouton= new ArrayList<JButton>();;
 	
 	Nav(String titre, int nbComposant){
+		super(new GridLayout(1, nbComposant));
 		this.nbComposant = nbComposant;
 		this.titre = titre;
 		JLabel Titre = new JLabel(this.titre);
+		Titre.setHorizontalAlignment(JLabel.CENTER);
 		this.add(Titre);
 		for(int i = 0; i<nbComposant-1; i++) {
 			JButton nouvBouton = new JButton(""+i);
@@ -20,11 +23,29 @@ public class Nav extends JPanel{
 		}
 	}
 	
-	public void modifNav(int position, String nom) {
+	public void modifButtonNav(int position, String nom) {
 		ListeBouton.get(position).add(nom, null);
 	}
 	
-	public void changerTitre(String titre) {
+	//get() et set()
+	
+	public int getNbComposant() {
+		return nbComposant;
+	}
+
+	public void setNbComposant(int nbComposant) {
+		this.nbComposant = nbComposant;
+	}
+
+	public String getTitre() {
+		return titre;
+	}
+
+	public void setTitre(String titre) {
 		this.titre = titre;
+	}
+
+	public ArrayList<JButton> getListeBouton() {
+		return ListeBouton;
 	}
 }
