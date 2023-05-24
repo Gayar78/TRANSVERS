@@ -1,15 +1,15 @@
-package Modele;
+package Vue;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Nav extends JPanel{
+public class JNav extends JPanel{
 	int nbComposant;
 	String titre;
 	ArrayList<JButton>ListeBouton= new ArrayList<JButton>();;
 	
-	Nav(String titre, int nbComposant){
+	JNav(String titre, int nbComposant){
 		super(new GridLayout(1, nbComposant));
 		this.nbComposant = nbComposant;
 		this.titre = titre;

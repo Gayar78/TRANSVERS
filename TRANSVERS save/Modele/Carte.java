@@ -1,27 +1,20 @@
 package Modele;
-import java.util.ArrayList;
 
-public class Carte {
-	private ArrayList<Membre> participants;
-	private String StatusCarte;
-	private String nomCarte;
+public class Carte extends Boite {
+	public String StatusCarte;
+	
+	public Carte(String nom) {
+		super(nom);
+	}
 
-	void ajouterMembre() {
+	public void ajouterMembre() {
 		// TODO - implement Carte.ajouterMembre
 		throw new UnsupportedOperationException();
 	}
 
-	void supprimerCarte() {
+	public void supprimerCarte() {
 		// TODO - implement Carte.supprimerCarte
 		throw new UnsupportedOperationException();
-	}
-
-	public ArrayList<Membre> getParticipants() {
-		return participants;
-	}
-
-	public void setParticipants(ArrayList<Membre> participants) {
-		this.participants = participants;
 	}
 
 	public String getStatusCarte() {
@@ -32,21 +25,8 @@ public class Carte {
 		StatusCarte = statusCarte;
 	}
 
-	public String getNomCarte() {
-		return nomCarte;
-	}
-
-	public void setNomCarte(String nomCarte) {
-		this.nomCarte = nomCarte;
-	}
-
-	void renseignerCarte() {
+	public void renseignerCarte() {
 		// TODO - implement Carte.renseignerCarte
-		throw new UnsupportedOperationException();
-	}
-
-	Carte() {
-		// TODO - implement Carte.Carte
 		throw new UnsupportedOperationException();
 	}
 }

@@ -1,16 +1,20 @@
 package Modele;
 import java.util.ArrayList;
 
-public class ListeCartes {
+public class ListeCartes extends Boite{
 	private ArrayList<Carte> cartes;
 	private String titreListe;
+	
+	public ListeCartes(String nom) {
+		super(nom);
+	}
 
-	void ajouterCarte() {
+	public void ajouterCarte() {
 		// TODO - implement ListeCartes.ajouterCarte
 		throw new UnsupportedOperationException();
 	}
 
-	void statusCarte() {
+	public void statusCarte() {
 		// TODO - implement ListeCartes.statusCarte
 		throw new UnsupportedOperationException();
 	}
@@ -31,12 +35,7 @@ public class ListeCartes {
 		this.titreListe = titreListe;
 	}
 
-	ListeCartes() {
-		// TODO - implement ListeCartes.ListeCartes
-		throw new UnsupportedOperationException();
-	}
-
-	void retirerCarte() {
+	public void retirerCarte() {
 		// TODO - implement ListeCartes.retirerCarte
 		throw new UnsupportedOperationException();
 	}

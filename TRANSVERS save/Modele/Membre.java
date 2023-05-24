@@ -5,10 +5,25 @@ public class Membre {
 	private String prenomMembre;
 	private String specificationMembre;
 	private String emailMembre;
+	private int id;
 
-	Membre() {
-
+	public Membre(String nom, String prenom) {
+		this.nomMembre = nom;
+		this.prenomMembre = prenom;
 	}
+	public Membre(String nom, String prenom, String email) {
+		this.nomMembre = nom;
+		this.prenomMembre = prenom;
+		this.emailMembre = email;
+	}
+
+	public Membre(String nom, String prenom, String email, String spec) {
+		this.nomMembre = nom;
+		this.prenomMembre = prenom;
+		this.emailMembre = email;
+		this.specificationMembre = spec;
+	}
+	
 
 	public String getNomMembre() {
 		return nomMembre;
@@ -40,6 +55,14 @@ public class Membre {
 
 	public void setEmailMembre(String emailMembre) {
 		this.emailMembre = emailMembre;
+	}
+	
+	public int getId() {
+		return this.id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	void supprimerMembre() {
