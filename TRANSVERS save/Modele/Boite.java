@@ -88,18 +88,6 @@ public abstract class Boite {
 		}
 	}
 	
-	public void devientChef(Membre m) {// un chef possede un id negatif
-		if(m.getId() >= 0) {
-			m.setId(m.getId()*(-1));
-		}
-	}
-	
-	public void devientMembre(Membre m) {// un membre a possede id positif
-		if(m.getId() < 0) {
-			m.setId(m.getId()*(-1));
-		}
-	}
-	
 	public void finalize() {//DESTRUCTEUR Java
 		System.out.print("Elément "+this.nom+" détruit !");  
 	}

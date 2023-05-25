@@ -6,6 +6,7 @@ public class Membre {
 	private String specificationMembre;
 	private String emailMembre;
 	private int id;
+	private boolean chef = false;
 
 	public Membre(String nom, String prenom) {
 		this.nomMembre = nom;
@@ -71,5 +72,13 @@ public class Membre {
 	
 	public void finalize() {//DESTRUCTEUR Java
 		System.out.print("Elément Membre détruit !");  
+	}
+	
+	public void devientChef(Membre m) {
+		this.chef = true;
+	}
+	
+	public void devientMembre(Membre m) {
+		this.chef = false;
 	}
 }
