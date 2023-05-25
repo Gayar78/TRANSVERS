@@ -73,10 +73,6 @@ public class Membre {
 		this.finalize();
 	}
 	
-	public void finalize() {//DESTRUCTEUR Java
-		System.out.print("Elément Membre détruit !");  
-	}
-	
 	public void devientChef() {
 		this.chef = true;
 	}
@@ -88,4 +84,9 @@ public class Membre {
 	public boolean getChef() {//pas de setChef ici !!
 		return this.chef;
 	}
+	
+	public void finalize() {//DESTRUCTEUR Java
+		System.out.print("Elément Membre détruit !");  
+	}
+
 }
