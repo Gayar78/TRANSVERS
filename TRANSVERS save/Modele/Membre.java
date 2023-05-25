@@ -6,16 +6,18 @@ public class Membre {
 	private String specificationMembre;
 	private String emailMembre;
 	private int id;
-	private boolean chef = false;
+	private boolean chef;
 
 	public Membre(String nom, String prenom) {
 		this.nomMembre = nom;
 		this.prenomMembre = prenom;
+		this.chef = false;
 	}
 	public Membre(String nom, String prenom, String email) {
 		this.nomMembre = nom;
 		this.prenomMembre = prenom;
 		this.emailMembre = email;
+		this.chef = false;
 	}
 
 	public Membre(String nom, String prenom, String email, String spec) {
@@ -23,6 +25,7 @@ public class Membre {
 		this.prenomMembre = prenom;
 		this.emailMembre = email;
 		this.specificationMembre = spec;
+		this.chef = false;
 	}
 	
 
@@ -74,11 +77,15 @@ public class Membre {
 		System.out.print("Elément Membre détruit !");  
 	}
 	
-	public void devientChef(Membre m) {
+	public void devientChef() {
 		this.chef = true;
 	}
 	
-	public void devientMembre(Membre m) {
+	public void devientMembre() {
 		this.chef = false;
+	}
+	
+	public boolean getChef() {//pas de setChef ici !!
+		return this.chef;
 	}
 }
