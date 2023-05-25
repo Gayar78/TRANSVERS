@@ -64,9 +64,12 @@ public class Membre {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	void supprimerMembre() {
-		// TODO - implement Membre.supprimerMembre
-		throw new UnsupportedOperationException();
+	
+	public void supprimerMembre(){//Méthode qui utilise le DESTRUCTEUR
+		this.finalize();
+	}
+	
+	public void finalize() {//DESTRUCTEUR Java
+		System.out.print("Elément Membre détruit !");  
 	}
 }
