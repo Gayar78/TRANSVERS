@@ -7,12 +7,33 @@ public class App {
 	public static void main(String[] args) {
 		try {
 			System.out.println("");
-			System.out.println("**********************TESTS***********************");
+			System.out.println("***********************TESTS***********************");
 			System.out.println("");
 			Tableau tab = new Tableau("tableauTest");
 			Projet proj = new Projet("projetTest");
 			String nom = new String();
 			nom = "a";
+			
+			System.out.println("");
+			System.out.println("---------- Tests de la classe ListeCarte ----------");
+			/*Test de ajouterTableau*/
+			ListeCarte liste = new ListeCarte("listeCarteTest");
+			Carte carte = new Carte("carteTest");
+			liste.ajouterTableau(carte);
+			System.out.print("ajouterTableau  : ");
+			if (liste.getCartes().size() == 1) {
+				System.out.println("       OK");
+			} else {
+				System.out.println("       ERR");
+			}
+			/*Test de retirerTableau*/
+			liste.retirerTableau(0);
+			System.out.print("retirerTableau  : ");
+			if (liste.getCartes().size() == 0) {
+				System.out.println("       OK");
+			} else {
+				System.out.println("       ERR");
+			}
 			
 			System.out.println("----------- Tests de la classe tableau -----------");
 			/*Test de changerNomListe*/
