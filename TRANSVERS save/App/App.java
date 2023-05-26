@@ -63,7 +63,7 @@ public class App {
 				System.out.println("          ERR");
 			}
 			/* Test de ajouterMembre*/
-			Membre membre0 = new Membre("nomTest", "prenomTest", "emailTest", "specificationTest");
+			Membre membre0 = new Membre("nomTest", "prenomTest", "emailTest");
 			Membre membre1 = new Membre("nomTest", "prenomTest", "emailTest");
 			Membre membre2 = new Membre("nomTest", "prenomTest");
 			tab.ajouterMembre(membre0);

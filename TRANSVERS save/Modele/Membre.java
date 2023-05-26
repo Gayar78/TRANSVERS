@@ -3,7 +3,6 @@ package Modele;
 public class Membre {
 	private String nomMembre;
 	private String prenomMembre;
-	private String specificationMembre;
 	private String emailMembre;
 	private int id;
 	private boolean chef;
@@ -18,16 +17,7 @@ public class Membre {
 		this.prenomMembre = prenom;
 		this.emailMembre = email;
 		this.chef = false;
-	}
-
-	public Membre(String nom, String prenom, String email, String spec) {
-		this.nomMembre = nom;
-		this.prenomMembre = prenom;
-		this.emailMembre = email;
-		this.specificationMembre = spec;
-		this.chef = false;
-	}
-	
+	}	
 
 	public String getNomMembre() {
 		return nomMembre;
@@ -43,14 +33,6 @@ public class Membre {
 
 	public void setPrenomMembre(String prenomMembre) {
 		this.prenomMembre = prenomMembre;
-	}
-
-	public String getSpecificationMembre() {
-		return specificationMembre;
-	}
-
-	public void setSpecificationMembre(String specificationMembre) {
-		this.specificationMembre = specificationMembre;
 	}
 
 	public String getEmailMembre() {
