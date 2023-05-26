@@ -8,33 +8,25 @@ public class ListeCarte extends Boite{
 
 	public ListeCarte(String nom){
 		super(nom);
-	}
-
-	public void statusCarte() {
-		// TODO - implement ListeCartes.statusCarte
-		throw new UnsupportedOperationException();
+		this.ListeCarte = new ArrayList<Carte>(0);
+		this.participants = new ArrayList<Membre>(0);
 	}
 
 	public ArrayList<Carte> getCartes() {
 		return ListeCarte;
 	}
 
-	public void setCartes(ArrayList<Carte> cartes) {
+	public void setListeCartes(ArrayList<Carte> cartes) {
 		this.ListeCarte = cartes;
 	}
 	
-	public void ajouterTableau(Carte carte) {
+	public void ajouterCarte(Carte carte) {
 		carte.setId(this.nbCarte);
 		this.ListeCarte.add(carte);
 		this.nbCarte ++;
 	}
-
-	/* retirertableau
-	 * ne renvoie rien 
-	 * paramètre : indice du tableau de la liste
-	 * retire le tableau indiqué par l'indice pris en paramètre si celui-ci est correct. Envoie une exception dans le cas contraire.
-	 */
-	public void retirerTableau(int id){
+	
+	public void retirerCarte(int id){
 		for(int i = 0; i<ListeCarte.size();i++) {
 			int particip = ListeCarte.get(i).getId();
 			if(id == particip) {
