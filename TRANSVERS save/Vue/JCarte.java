@@ -1,5 +1,5 @@
 package Vue;
 
-public class JCarte {
+public class JCarte extends JBoite{
 
 }

@@ -1,5 +1,5 @@
 package Vue;
 
-public class JTableau {
+public class JTableau extends JBoite{
 
 }

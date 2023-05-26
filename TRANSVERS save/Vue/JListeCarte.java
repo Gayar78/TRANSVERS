@@ -1,5 +1,5 @@
 package Vue;
 
-public class JListeCarte {
+public class JListeCarte extends JBoite{
 
 }

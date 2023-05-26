@@ -1,5 +1,5 @@
 package Vue;
 
-public class JProjet {
+public class JProjet extends JBoite{
 
 }
