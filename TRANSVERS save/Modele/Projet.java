@@ -1,7 +1,10 @@
 package Modele;
 
 import java.util.ArrayList;
-
+/*
+ * classe projet, étends Boite
+ * Permet de créer des projets qui contiendront des tableaux
+ */
 public class Projet extends Boite {
 	private ArrayList<Tableau> Listetableau;
 	private int nbTableau;

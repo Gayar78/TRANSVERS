@@ -2,45 +2,74 @@ package Modele;
 
 import java.util.ArrayList;
 
+/*
+ * Classe abstraite boite : Permet de faire des boites pour séparer les données et les afficher comme on le souhaite.
+ * Chaque boite (ie : Accueil, Projet, Tableau, ListeCarte et Carte) possède un nom et des membres et listes de membres
+ */
 public abstract class Boite {
 	public String nom;
 	public ArrayList<Membre> participants;
 	int indentation;
 	int id;
 	
+	/*
+	 * Constructeur de la classe Boite
+	 * initialise le nom de cette boite.
+	 */
 	Boite(String nom){
 		this.nom = nom;
 	}
-	
+	/*
+	 * getter getMembre, renvoie la liste de membres
+	 */
 	public ArrayList<Membre> getMembres() {
 		return participants;
 	}
 	
+	/*
+	 * setter setMembres, initialise une liste de membres
+	 */
 	public void setMembres(ArrayList<Membre> membresProjet) {
 		this.participants = membresProjet;
 	}
-
 	
+/*
+ * getter getNom, renvoie le nom
+ */
 	public String getNom() {
 		return this.nom;
 	}
 	
+	/*
+	 * setter setNom, initialise le nom
+	 */
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 	
+	/*
+	 * getter indenteNbMembre, renvoie le nombre de boites dans la liste de boites inférieures de chaque classe (Un projet a des listes de tableaux, donc cette fonction renverra le nombre de tableaux dans la liste)
+	 */
 	public int indenteNbMembre() {
 		return this.indentation;
 	}
 	
+	/*
+	 * getter tailleListeMembre, renvoie le nombre de membres
+	 */
 	public int tailleListeMembre() {
 		return participants.size();
 	}
 	
+	/*
+	 * getter getID, renvoie un identifiant
+	 */
 	public int getId() {
 		return this.id;
 	}
-	
+	/*
+	 * setter setID, initialise un identifiant
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -82,6 +111,10 @@ public abstract class Boite {
 		}
 	}
 	
+	/*
+	 * procédure retirerListMembre
+	 * supprime une liste de membres passsée un paramètre.
+	 */
 	public void retirerListMembre(ArrayList<Membre> listmembre) {
 		for(Membre m: listmembre) {
 			retirerMembre(m.getId());

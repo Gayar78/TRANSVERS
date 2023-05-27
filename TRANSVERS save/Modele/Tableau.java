@@ -1,6 +1,9 @@
 package Modele;
 import java.util.ArrayList;
-
+/*
+ * classe Tableau, étends Boite
+ * permet de créer des tableaux, situés dans les projets, pouvant contenir des listes de cartes
+ */
 public class Tableau extends Boite {
 	private ArrayList<ListeCarte> desListeCarte;
 	private int nbListe;
