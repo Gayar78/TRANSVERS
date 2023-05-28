@@ -15,7 +15,7 @@ public class JNav extends JPanel{
 	 * Constructeur de la classe JNav, qui initialise un Panel, des composants, un titre
 	 * et affiche le titre dans un JLabel, et des boutons
 	 */
-	JNav(String titre, int nbComposant){
+	public JNav(String titre, int nbComposant){
 		super(new GridLayout(1, nbComposant));
 		this.nbComposant = nbComposant;
 		this.titre = titre;

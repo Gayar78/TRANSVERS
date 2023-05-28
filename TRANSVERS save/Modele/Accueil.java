@@ -14,7 +14,7 @@ public class Accueil extends Boite{
 	 * Constructeur de la classe Accueil, initie une liste de projets et une liste de membres,
 	 * et fait appel au superconstructeur de la classe boite
 	 */
-	Accueil(String nom){
+	public Accueil(String nom){
 		super(nom);
 		this.ListeProjet = new ArrayList<Projet>(0);
 		this.participants = new ArrayList<Membre>(0);
