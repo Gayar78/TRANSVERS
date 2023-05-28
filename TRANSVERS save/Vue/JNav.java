@@ -41,6 +41,10 @@ public class JNav extends JPanel{
 	public int getNbComposant() {
 		return nbComposant;
 	}
+	
+	public JButton getBouton(int position) {
+		return this.ListeBouton.get(position);
+	}
 
 	public void setNbComposant(int nbComposant) {
 		this.nbComposant = nbComposant;

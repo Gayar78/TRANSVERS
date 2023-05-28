@@ -63,6 +63,10 @@ public class Tableau extends Boite {
 		this.desListeCarte = listesCartes;
 	}
 	
+	public int getNbListeCarte() {
+		return this.nbListe;
+	}
+	
 	public void supprimerTableau() {
 		finalize();
 	}

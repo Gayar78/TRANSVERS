@@ -53,6 +53,11 @@ public class ListeCarte extends Boite{
 			}
 		}
 	}
+	
+	public int getNbCarte() {
+		return this.nbCarte;
+	}
+	
 	/*
 	 * procédure supprimerListeCarte
 	 * détruit la liste de cartes
