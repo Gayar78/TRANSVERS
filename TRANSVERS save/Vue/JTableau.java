@@ -1,10 +1,12 @@
 package Vue;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import App.App;
 import Modele.*;
 
 /*
@@ -13,23 +15,17 @@ import Modele.*;
  */
 public class JTableau extends JBoite{
 	Tableau Parametre;
-	public JTableau(){
-		super();
-		this.Parametre = new Tableau("");
-		this.NavBoite = new JNav(this.Parametre.getNom(),2);
-		this.MilieuBoite = new JPanel();
+	public JTableau(String nom){
+		super(nom);
+		this.Parametre = new Tableau(nom);
 		
-		if(this.Parametre.getNbListeCarte()== 0) {
-			JLabel vide = new JLabel("Il n'y a rien ici");
-			add(vide);
-		} else {
-			NavBoite.modifButtonNav(0, "Liste Membre");
-			NavBoite.modifButtonNav(1, "Ajouter Membre");
+		NavBoite.setPreferredSize(new Dimension(App.longueur, 30));
+		
+		//ici les dirrent changement que je peux apporter aux paramètre de base de la classe abstraite JBoite
 			
-			//ici seront les appels de fonction des controlleurs...
+		//ici seront les appels de fonction des controlleurs...
 			
-			add(NavBoite, BorderLayout.NORTH);
-			add(MilieuBoite, BorderLayout.CENTER);
-		}
+		add(NavBoite, BorderLayout.NORTH);
+		add(MilieuBoite, BorderLayout.CENTER);
 	}
 }

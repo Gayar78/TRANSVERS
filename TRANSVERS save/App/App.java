@@ -1,9 +1,28 @@
 package App;
 import java.util.ArrayList;
+import javax.swing.*;
+import java.awt.*;
 
 import Modele.*;
+import Vue.*;
 
 public class App {
+		public JFrame frame;
+		public final static int longueur = 800;
+		public final static int largeur = 600;
+		
+		App(){
+			this.frame = new JFrame("TrelloListe");
+			this.frame.setSize(longueur, largeur);
+			JAccueil acceuil = new JAccueil("Menu Principal");
+			frame.add(acceuil, BorderLayout.CENTER);
+			frame.setVisible(true);
+		}
+		
+		public int getLongueur(){
+			return longueur;
+		}
+		
 	public static void main(String[] args) {
 		try {
 			//###############VARIABLES######################
@@ -141,6 +160,14 @@ public class App {
 		} catch (Exception e) {
 		 e.printStackTrace();
 		}
+		System.out.println("");
+		System.out.println("################### FIN TESTS ###################");
+		
+		App Rendu = new App();
+		Rendu.frame.setVisible(true);
+		
 
 	}
+	
+	
 }

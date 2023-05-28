@@ -12,7 +12,6 @@ public class AccueilControlleur extends BoiteControlleur{
 	JAccueil jacc;
 	public AccueilControlleur() {
 			super();
-			jacc = new JAccueil();
 			add(jacc);
 			JButton plusProjet = new JButton("+ Projet");
 			add(plusProjet);

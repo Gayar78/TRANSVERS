@@ -3,6 +3,7 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import App.App;
 import Modele.*;
 /*
  * Classe JProjet, étends JBoite
@@ -10,23 +11,17 @@ import Modele.*;
  */
 public class JProjet extends JBoite{
 	Projet Parametre;
-	public JProjet(){
-		super();
-		this.Parametre = new Projet("");
-		this.NavBoite = new JNav(this.Parametre.getNom(),2);
-		this.MilieuBoite = new JPanel();
+	public JProjet(String nom){
+		super(nom);
+		this.Parametre = new Projet(nom);
 		
-		if(this.Parametre.getNbTableau()== 0) {
-			JLabel vide = new JLabel("Il n'y a rien ici");
-			add(vide);
-		} else {
-			NavBoite.modifButtonNav(0, "Liste Membre");
-			NavBoite.modifButtonNav(1, "Ajouter Membre");
+		NavBoite.setPreferredSize(new Dimension(App.longueur, 60));
+		
+		//ici les dirrent changement que je peux apporter aux paramètre de base de la classe abstraite JBoite
 			
-			//ici seront les appels de fonction des controlleurs...
+		//ici seront les appels de fonction des controlleurs...
 			
-			add(NavBoite, BorderLayout.NORTH);
-			add(MilieuBoite, BorderLayout.CENTER);
-		}
+		add(NavBoite, BorderLayout.NORTH);
+		add(MilieuBoite, BorderLayout.CENTER);
 	}
 }

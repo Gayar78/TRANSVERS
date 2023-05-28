@@ -22,7 +22,7 @@ public class JNav extends JPanel{
 		JLabel Titre = new JLabel(this.titre);
 		Titre.setHorizontalAlignment(JLabel.CENTER);
 		this.add(Titre);
-		for(int i = 0; i<nbComposant-1; i++) {
+		for(int i = 0; i<nbComposant; i++) {
 			JButton nouvBouton = new JButton(""+i);
 			this.add(nouvBouton);
 			ListeBouton.add(nouvBouton);
@@ -33,7 +33,9 @@ public class JNav extends JPanel{
 	 * change le nom d'un bouton présent
 	 */
 	public void modifButtonNav(int position, String nom) {
-		ListeBouton.get(position).add(nom, null);
+		this.remove(ListeBouton.get(position));
+		JButton a = new JButton(nom);
+		this.add(a);
 	}
 	
 	//get() et set()
