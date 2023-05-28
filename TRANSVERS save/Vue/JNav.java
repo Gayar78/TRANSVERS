@@ -33,9 +33,19 @@ public class JNav extends JPanel{
 	 * change le nom d'un bouton présent
 	 */
 	public void modifButtonNav(int position, String nom) {
-		this.remove(ListeBouton.get(position));
-		JButton a = new JButton(nom);
-		this.add(a);
+		for(int i = 0; i<ListeBouton.size();i++) {
+			remove(1);
+		}
+		for(int i=0; i<ListeBouton.size();i++){
+			if(position == i) {
+				ListeBouton.get(position).setName(nom);
+				JButton Bouton = new JButton(nom);
+				this.add(Bouton);
+			}else {
+				JButton Bouton = new JButton(ListeBouton.get(i).getName());
+				this.add(Bouton);
+			}
+		}
 	}
 	
 	//get() et set()

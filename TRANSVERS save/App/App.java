@@ -17,6 +17,8 @@ public class App {
 			JAccueil acceuil = new JAccueil("Menu Principal");
 			frame.add(acceuil, BorderLayout.CENTER);
 			frame.setVisible(true);
+			acceuil.getNav().modifButtonNav(0, "Menu Membre");
+			acceuil.getNav().modifButtonNav(1, "Liste Membre");
 		}
 		
 		public int getLongueur(){

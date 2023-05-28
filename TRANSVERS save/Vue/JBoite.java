@@ -23,4 +23,12 @@ public class JBoite extends JPanel {
 		NavBoite.modifButtonNav(0, "Boutton 1");
 		NavBoite.modifButtonNav(1, "Boutton 2");
 	}
+	
+	public JPanel getMilieu() {
+		return MilieuBoite;
+	}
+	
+	public JNav getNav() {
+		return NavBoite;
+	}
 }
