@@ -108,7 +108,7 @@ public class Membre {
 	}
 	
 	public void finalize() {//DESTRUCTEUR Java
-		System.out.print("Elément Membre détruit !");  
+		//System.out.print("Elément Membre détruit !");  
 	}
 
 }

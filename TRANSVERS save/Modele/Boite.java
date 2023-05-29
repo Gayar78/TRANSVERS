@@ -122,7 +122,7 @@ public abstract class Boite {
 	}
 	
 	public void finalize() {//DESTRUCTEUR Java
-		System.out.print("Elément "+this.nom+" détruit !");  
+		//System.out.print("Elément "+this.nom+" détruit !");  
 	}
 	
 	

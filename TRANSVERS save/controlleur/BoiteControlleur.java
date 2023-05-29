@@ -1,10 +1,15 @@
 package controlleur;
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
 import javax.swing.*;
 
-public class BoiteControlleur extends JPanel {
-	public BoiteControlleur() {
-		super(new GridLayout(4,1));
+import App.App;
+
+public abstract class BoiteControlleur extends JButton{
+	public BoiteControlleur(String nom) {
+		super(nom);
 	}
+	
+	
 }

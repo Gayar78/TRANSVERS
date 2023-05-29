@@ -1,16 +1,16 @@
 package Vue;
 import Modele.*;
 
-import java.awt.BorderLayout;
+import java.awt.*;
 
 import javax.swing.*;
 /*
  * Classe JBoite, étends Jpanel
  * Affichage graphique de la classe Boite
  */
-public class JBoite extends JPanel {
+public abstract class JBoite extends JPanel {
 	public JNav NavBoite;
-	public JPanel MilieuBoite;
+	public JMilieu MilieuBoite;
 	public Boite Parametre; 
 	/*
 	 * constructeur de la classe JBoite
@@ -18,10 +18,7 @@ public class JBoite extends JPanel {
 	 * et les ajoute au panel
 	 */
 	public JBoite(String nom){
-		this.NavBoite = new JNav(nom,2);
-		this.MilieuBoite = new JPanel();
-		NavBoite.modifButtonNav(0, "Boutton 1");
-		NavBoite.modifButtonNav(1, "Boutton 2");
+		super(new BorderLayout());
 	}
 	
 	public JPanel getMilieu() {
@@ -31,4 +28,5 @@ public class JBoite extends JPanel {
 	public JNav getNav() {
 		return NavBoite;
 	}
+	
 }
