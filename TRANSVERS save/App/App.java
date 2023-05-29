@@ -2,7 +2,7 @@ package App;
 import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.*;
-
+import controlleur.*;
 import Modele.*;
 import Vue.*;
 
@@ -12,9 +12,9 @@ public class App {
 		public final static int largeur = 600;
 		
 		App(){
-			this.frame = new JFrame("TrelloListe");
+			this.frame = new JFrame("TrelloLite");
 			this.frame.setSize(longueur, largeur);
-			JAccueil acceuil = new JAccueil("Menu Principal");
+			AccueilControlleur acceuil = new AccueilControlleur("Menu Principal");
 			frame.add(acceuil, BorderLayout.CENTER);
 			frame.setVisible(true);
 		}
@@ -165,7 +165,6 @@ public class App {
 		
 		App Rendu = new App();
 		Rendu.frame.setVisible(true);
-		
 
 	}
 	

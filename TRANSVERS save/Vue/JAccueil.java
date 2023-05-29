@@ -25,4 +25,11 @@ public class JAccueil extends JBoite{
 		add(NavBoite, BorderLayout.NORTH);
 		add(MilieuBoite, BorderLayout.CENTER);
 	}
+	
+	public void ajouterProjet(Projet p) {
+		this.Parametre.ajouterProjet(p);
+	}
+	public int getnbProjets() {
+		return this.Parametre.getNbProjet();
+	}
 }

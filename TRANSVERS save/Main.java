@@ -9,7 +9,7 @@ public class Main{
 	public static void main(String[] args) {
 		JFrame f = new JFrame();
 		JNav nav = new JNav("Menu Principal", 0);
-		AccueilControlleur accueil = new AccueilControlleur();
+		AccueilControlleur accueil = new AccueilControlleur("menu principal");
 		f.add(nav, BorderLayout.NORTH);
 		f.add(accueil, BorderLayout.CENTER);
 		f.setVisible(true);
