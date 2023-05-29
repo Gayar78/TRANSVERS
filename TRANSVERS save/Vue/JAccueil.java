@@ -19,13 +19,13 @@ public class JAccueil extends JBoite{
 		super(nom);
 		this.Parametre = new Accueil(nom);
 		this.NavBoite = new JNav(nom,2);
-		this.PlusProjet = new AccueilControlleur("+Projet");
+		this.PlusProjet = new AccueilControlleur("+");
 		this.MilieuBoite = new JMilieu(1,this.PlusProjet);
 		
 			
 		//ici seront les appels de fonction des controlleurs...
 		this.PlusProjet.ActionDePlusProjet(this);
-		//this.MilieuBoite.add(PlusProjet);
+		
 		
 		this.NavBoite.setPreferredSize(new Dimension(App.longueur,90));	
 		add(this.NavBoite, BorderLayout.NORTH);

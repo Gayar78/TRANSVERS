@@ -21,7 +21,7 @@ public abstract class JBoite extends JPanel {
 		super(new BorderLayout());
 	}
 	
-	public JPanel getMilieu() {
+	public JMilieu getMilieu() {
 		return MilieuBoite;
 	}
 	

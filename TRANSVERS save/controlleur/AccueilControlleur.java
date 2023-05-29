@@ -1,5 +1,5 @@
 package controlleur;
-import Vue.JAccueil;
+import Vue.*;
 import Modele.*;
 import javax.swing.*;
 
@@ -10,6 +10,7 @@ import java.awt.GridLayout;
 import java.awt.event.*;
 
 public class AccueilControlleur extends BoiteControlleur{
+	JButton nouveauProjet;
 	
 	public AccueilControlleur(String nom) {
 		super(nom);
@@ -19,11 +20,19 @@ public class AccueilControlleur extends BoiteControlleur{
 		jacc.getPlusProjet().addActionListener(new ActionListener() { 
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jacc.getnbProjets()<4) {
-		        	String text = JOptionPane.showInputDialog("Entrez le nom du projet");
+	        		String text = JOptionPane.showInputDialog("Entrez le nom du projet");
 					Projet P = new Projet(text);
 					jacc.ajouterProjet(P);
-					JButton projet = new JButton(text);
-					jacc.getMilieu().add(projet);
+					nouveauProjet = new JButton(text);
+					nouveauProjet.addActionListener(new ActionListener() { 
+				        public void actionPerformed(ActionEvent e) {
+				        	jacc.getMilieu().removeAll();
+				        	jacc.getMilieu().add(new JProjet("text"));
+				        	jacc.getMilieu().revalidate();
+							jacc.getMilieu().repaint();
+				        }
+					});
+					jacc.getMilieu().add(nouveauProjet);
 					jacc.getMilieu().revalidate();
 					jacc.getMilieu().repaint();
 					System.out.println(jacc.getnbProjets());
