@@ -25,7 +25,6 @@ public class ListeCarteControlleur extends BoiteControlleur {
 					nouvelleCarte = new JButton(text);
 					nouvelleCarte.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
-				        	App.MesMaps.Ajoute(jlist);
 				        	jlist.removeAll();
 				        	jlist.add(C);
 				        	jlist.revalidate();
@@ -40,8 +39,8 @@ public class ListeCarteControlleur extends BoiteControlleur {
 		});
 	}
 	
-	public void RetourProjet(JListeCarte jlist) {
-		jlist.getNav().getBouton(2).addActionListener(new ActionListener() { 
+	public void RetourTableau(JListeCarte jlist) {
+		jlist.getRetourTableau().addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("RetourTableau");
 			}

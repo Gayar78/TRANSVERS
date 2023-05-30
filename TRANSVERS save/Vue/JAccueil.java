@@ -22,18 +22,16 @@ public class JAccueil extends JBoite{
 	
 	public JAccueil(String nom){
 		super(nom);
+		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
+		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		ListeProjet = new HashMap<>();
 		
 		this.Parametre = new Accueil(nom);
 		
-		this.NavBoite = new JNav(nom);
-		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		AccueilControlleur BTN1 = new AccueilControlleur("BTN1");
 		this.NavBoite.add(BTN1);
 		
 		this.PlusProjet = new AccueilControlleur("+");
-		this.MilieuBoite = new JMilieu();
-		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		this.MilieuBoite.add(PlusProjet);
 		
 			

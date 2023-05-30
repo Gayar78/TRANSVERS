@@ -23,7 +23,6 @@ public abstract class JBoite extends JPanel {
 		this.nom = nom;
 		
 		this.NavBoite = new JNav(nom);
-		
 		this.MilieuBoite = new JMilieu();
 	}
 	

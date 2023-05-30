@@ -27,7 +27,6 @@ public class AccueilControlleur extends BoiteControlleur{
 					nouveauProjet = new JButton(text);
 					nouveauProjet.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
-				        	App.MesMaps.Ajoute(jacc);
 				        	jacc.removeAll();
 				        	jacc.add(P);
 				        	jacc.revalidate();

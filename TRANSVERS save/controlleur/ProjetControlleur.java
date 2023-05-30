@@ -3,7 +3,6 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-import App.App;
 import Vue.*;
 import Modele.*;
 
@@ -24,7 +23,6 @@ public class ProjetControlleur extends BoiteControlleur{
 					nouveauTableau = new JButton(text);
 					nouveauTableau.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
-				        	App.MesMaps.Ajoute(jProg);
 				        	jProg.removeAll();
 				        	jProg.add(T);
 				        	jProg.revalidate();

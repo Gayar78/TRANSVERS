@@ -10,7 +10,6 @@ import Modele.*;
 import Vue.*;
 
 public class App {
-		public static JMaps MesMaps;
 	    public JFrame frame;
 		public final static int longueur = 1200;
 		public final static int largeur = 1000;

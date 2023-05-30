@@ -26,7 +26,6 @@ public class TableauControlleur extends BoiteControlleur{
 					nouveauListeCArte = new JButton(text);
 					nouveauListeCArte.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
-				        	App.MesMaps.Ajoute(jtab);
 				        	jtab.removeAll();
 				        	jtab.add(L);
 				        	jtab.revalidate();
@@ -42,7 +41,7 @@ public class TableauControlleur extends BoiteControlleur{
 	}
 	
 	public void RetourProjet(JTableau jtab) {
-		jtab.getNav().getBouton(2).addActionListener(new ActionListener() { 
+		jtab.getRetourProjet().addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("RetourProjet");
 			}

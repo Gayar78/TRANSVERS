@@ -22,6 +22,9 @@ public class JProjet extends JBoite{
 	
 	public JProjet(String nom){
 		super(nom);
+		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
+		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+		
 		ListeTableau = new HashMap<>();
 		
 		this.Parametre = new Projet(nom);
@@ -30,8 +33,6 @@ public class JProjet extends JBoite{
 		this.NavBoite.add(RetourAccueil);
 		
 		this.PlusTableau = new ProjetControlleur("+");
-		this.MilieuBoite = new JMilieu();
-		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 0, 0, 0));
 		this.MilieuBoite.add(PlusTableau);
 		
 			

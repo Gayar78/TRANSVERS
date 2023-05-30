@@ -20,25 +20,27 @@ import controlleur.*;
  */
 public class JTableau extends JBoite{
 	Tableau Parametre;
-	TableauControlleur PlusListeCarte;
+	TableauControlleur PlusListeCarte,RetourProjet;
 	Map<String, JListeCarte> ListeListeCarte;
 	public JTableau(String nom){
 		super(nom);
+		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
+		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+		
 		ListeListeCarte = new HashMap<>();
 		
 		this.Parametre = new Tableau(nom);
 		
-		TableauControlleur retourProjet = new TableauControlleur("Retour Projet");
-		this.NavBoite.add(retourProjet);
+		RetourProjet = new TableauControlleur("Retour Projet");
+		this.NavBoite.add(RetourProjet);
 		
 		this.PlusListeCarte = new TableauControlleur("+");
-		this.MilieuBoite = new JMilieu();
-		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 0, 0, 0));
 		this.MilieuBoite.add(PlusListeCarte);
 		
 			
 		//ici seront les appels de fonction des controlleurs...
 		this.PlusListeCarte.ActionDePlusListeCarte(this);
+		RetourProjet.RetourProjet(this);
 		
 		
 		this.NavBoite.setPreferredSize(new Dimension(App.longueur,52));	
@@ -66,6 +68,10 @@ public class JTableau extends JBoite{
 	
 	public TableauControlleur getPlusListeCarte() {
 		return this.PlusListeCarte;
+	}
+	
+	public TableauControlleur getRetourProjet() {
+		return this.RetourProjet;
 	}
 	
 	public Tableau getParametre() {
