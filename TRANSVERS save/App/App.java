@@ -1,5 +1,8 @@
 package App;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.swing.*;
 import java.awt.*;
 import controlleur.*;
@@ -8,18 +11,20 @@ import Vue.*;
 
 public class App {
 		public JFrame frame;
-		public final static int longueur = 800;
-		public final static int largeur = 600;
+		public Map<String, JAccueil> MapAccueil;
+		public final static int longueur = 1200;
+		public final static int largeur = 1000;
 		
 		App(){
 			this.frame = new JFrame("TrelloLite");
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			this.frame.setSize(longueur, largeur);
-			JAccueil acceuil = new JAccueil("Menu Principal");
+			JAccueil acceuil = new JAccueil("Accueil");
 			frame.add(acceuil, BorderLayout.CENTER);
 			frame.setVisible(true);
-			acceuil.getNav().modifButtonNav(0, "Menu Membre");
-			acceuil.getNav().modifButtonNav(1, "Liste Membre");
+			
+			MapAccueil = new HashMap<>();
+			this.MapAccueil.put(acceuil.getNom(), acceuil);
 		}
 		
 	public static void main(String[] args) {
@@ -165,7 +170,5 @@ public class App {
 		App Rendu = new App();
 		Rendu.frame.setVisible(true);
 
-	}
-	
-	
+	}	
 }

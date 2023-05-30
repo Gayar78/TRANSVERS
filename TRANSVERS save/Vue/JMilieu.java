@@ -10,30 +10,34 @@ import controlleur.*;
 
 public class JMilieu extends JPanel{
 	int nbComposant;
-	BoiteControlleur PlusBoite;
+	String titre;
+	ArrayList<BoiteControlleur>ListeBouton= new ArrayList<BoiteControlleur>();;
 	/*
 	 * Constructeur de la classe JNav, qui initialise un Panel, des composants, un titre
 	 * et affiche le titre dans un JLabel, et des boutons
 	 */
-	public JMilieu(int nbComposant, BoiteControlleur plusBoite){
-		super(new GridLayout(1, nbComposant));
-		this.nbComposant = nbComposant;
-		this.PlusBoite = plusBoite;
-		this.add(PlusBoite);
+	public JMilieu(){
+		super(new GridLayout(1,4));
 	}
 	
-	//get() et set()
-	
-	public int getNbComposant() {
-		return nbComposant;
-	}
-
-	public void setNbComposant(int nbComposant) {
-		this.nbComposant = nbComposant;
+	public void ajouteComposantMilieu(BoiteControlleur Boite) {
+		this.nbComposant ++;
+		this.ListeBouton.add(Boite);
+		this.add(Boite);
 	}
 	
-	public BoiteControlleur getPlusBoite() {
-		return this.PlusBoite;
+	public void retirComposantMilieu(int position) {
+		this.nbComposant--;
+		this.remove(this.ListeBouton.get(position));
+		this.ListeBouton.remove(position);
+	}
+	
+	public int getNombreComposantMilieu() {
+		return this.nbComposant;
+	}
+	
+	public String getTitreMilieu() {
+		return this.titre;
 	}
 
 }

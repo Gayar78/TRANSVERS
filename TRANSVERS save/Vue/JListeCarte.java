@@ -26,4 +26,13 @@ public class JListeCarte extends JBoite{
 		add(NavBoite, BorderLayout.NORTH);
 		add(MilieuBoite, BorderLayout.CENTER);
 	}
+	
+	public ListeCarte getParametre() {
+		return this.Parametre;
+	}
+	
+	public String getNom() {
+		return this.Parametre.getNom();
+	}
+	
 }

@@ -1,11 +1,14 @@
 package Vue;
 import Modele.*;
+
 import controlleur.*;
 
 import App.*;
 
 
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.*;
 /*
@@ -15,12 +18,21 @@ import javax.swing.*;
 public class JAccueil extends JBoite{
 	Accueil Parametre;
 	AccueilControlleur PlusProjet;
+	Map<String, JProjet> ListeProjet;
+	
 	public JAccueil(String nom){
 		super(nom);
+		ListeProjet = new HashMap<>();
+		
 		this.Parametre = new Accueil(nom);
-		this.NavBoite = new JNav(nom,2);
+		
+		this.NavBoite = new JNav(nom);
+		AccueilControlleur BTN1 = new AccueilControlleur("BTN1");
+		this.NavBoite.add(BTN1);
+		
 		this.PlusProjet = new AccueilControlleur("+");
-		this.MilieuBoite = new JMilieu(1,this.PlusProjet);
+		this.MilieuBoite = new JMilieu();
+		this.MilieuBoite.add(PlusProjet);
 		
 			
 		//ici seront les appels de fonction des controlleurs...
@@ -32,14 +44,29 @@ public class JAccueil extends JBoite{
 		add(this.MilieuBoite, BorderLayout.CENTER);
 	}
 	
-	public void ajouterProjet(Projet p) {
-		this.Parametre.ajouterProjet(p);
+	public void ajouterProjet(JProjet p) {
+		this.ListeProjet.put(p.getNom(),p);
+		this.Parametre.ajouterProjet(p.getParametre());
 	}
-	public int getnbProjets() {
+	
+	public void retirProjet(JProjet p) {
+		for (Map.Entry<String, JProjet> entry : this.ListeProjet.entrySet()) {
+	        if (entry.getValue() == p) {
+	        	this.ListeProjet.remove(entry.getKey());
+	        }
+	    }
+		this.Parametre.retirerProjet(p.getParametre().getId());
+	}
+	
+	public int getNbProjets() {
 		return this.Parametre.getNbProjet();
 	}
 	
 	public AccueilControlleur getPlusProjet() {
 		return this.PlusProjet;
+	}
+	
+	public String getNom() {
+		return this.Parametre.getNom();
 	}
 }

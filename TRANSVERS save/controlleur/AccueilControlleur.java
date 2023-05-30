@@ -19,15 +19,15 @@ public class AccueilControlleur extends BoiteControlleur{
 	public void ActionDePlusProjet(JAccueil jacc) {
 		jacc.getPlusProjet().addActionListener(new ActionListener() { 
 	        public void actionPerformed(ActionEvent e) {
-	        	if(jacc.getnbProjets()<4) {
+	        	if(jacc.getNbProjets()<4) {
 	        		String text = JOptionPane.showInputDialog("Entrez le nom du projet");
-					Projet P = new Projet(text);
+					JProjet P = new JProjet(text);
 					jacc.ajouterProjet(P);
 					nouveauProjet = new JButton(text);
 					nouveauProjet.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
 				        	jacc.getMilieu().removeAll();
-				        	jacc.getMilieu().add(new JProjet("text"));
+				        	jacc.getMilieu().add(P);
 				        	jacc.getMilieu().revalidate();
 							jacc.getMilieu().repaint();
 				        }
@@ -35,7 +35,6 @@ public class AccueilControlleur extends BoiteControlleur{
 					jacc.getMilieu().add(nouveauProjet);
 					jacc.getMilieu().revalidate();
 					jacc.getMilieu().repaint();
-					System.out.println(jacc.getnbProjets());
 	        	}		
 		    }
 		});

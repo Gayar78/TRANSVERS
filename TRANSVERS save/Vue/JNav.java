@@ -1,6 +1,7 @@
 package Vue;
 
 import javax.swing.*;
+import controlleur.*;
 import java.awt.*;
 import java.util.ArrayList;
 /*
@@ -10,67 +11,39 @@ import java.util.ArrayList;
 public class JNav extends JPanel{
 	int nbComposant;
 	String titre;
-	ArrayList<JButton>ListeBouton= new ArrayList<JButton>();;
+	ArrayList<BoiteControlleur>ListeBouton= new ArrayList<BoiteControlleur>();;
 	/*
 	 * Constructeur de la classe JNav, qui initialise un Panel, des composants, un titre
 	 * et affiche le titre dans un JLabel, et des boutons
 	 */
-	public JNav(String titre, int nbComposant){
-		super(new GridLayout(1, nbComposant));
-		this.nbComposant = nbComposant;
-		this.titre = titre;
-		JLabel Titre = new JLabel(this.titre);
+	public JNav(String titre){
+		super(new GridLayout(1,3));
+		JLabel Titre = new JLabel(titre);
 		Titre.setHorizontalAlignment(JLabel.CENTER);
 		this.add(Titre);
-		for(int i = 0; i<nbComposant; i++) {
-			JButton nouvBouton = new JButton(""+i);
-			this.add(nouvBouton);
-			ListeBouton.add(nouvBouton);
-		}
-	}
-	/*
-	 * procédure modifButtonNav
-	 * change le nom d'un bouton présent
-	 */
-	public void modifButtonNav(int position, String nom) {
-		for(int i = 0; i<ListeBouton.size();i++) {
-			remove(1);
-		}
-		for(int i=0; i<ListeBouton.size();i++){
-			if(position == i) {
-				ListeBouton.get(position).setName(nom);
-				JButton Bouton = new JButton(nom);
-				this.add(Bouton);
-			}else {
-				JButton Bouton = new JButton(ListeBouton.get(i).getName());
-				this.add(Bouton);
-			}
-		}
 	}
 	
-	//get() et set()
-	
-	public int getNbComposant() {
-		return nbComposant;
+	public void ajouteComposantNav(BoiteControlleur Boite) {
+		this.nbComposant ++;
+		this.ListeBouton.add(Boite);
+		this.add(Boite);
 	}
 	
-	public JButton getBouton(int position) {
-		return this.ListeBouton.get(position);
+	public void retirComposantNav(int position) {
+		this.nbComposant--;
+		this.remove(this.ListeBouton.get(position));
+		this.ListeBouton.remove(position);
 	}
-
-	public void setNbComposant(int nbComposant) {
-		this.nbComposant = nbComposant;
+	
+	public int getNombreCompos() {
+		return this.nbComposant;
 	}
-
-	public String getTitre() {
-		return titre;
+	
+	public BoiteControlleur getBouton(int position) {
+		return ListeBouton.get(position);
 	}
-
-	public void setTitre(String titre) {
-		this.titre = titre;
-	}
-
-	public ArrayList<JButton> getListeBouton() {
-		return ListeBouton;
+	
+	public String getTitreNav() {
+		return this.titre;
 	}
 }
