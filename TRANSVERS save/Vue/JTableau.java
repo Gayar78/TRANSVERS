@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -27,26 +28,20 @@ public class JTableau extends JBoite{
 		
 		this.Parametre = new Tableau(nom);
 		
-		this.NavBoite = new JNav(nom);
-		TableauControlleur BTN1 = new TableauControlleur("BTN1");
-		TableauControlleur BTN2 = new TableauControlleur("BTN2");
-		TableauControlleur BTN3 = new TableauControlleur("BTN3");
 		TableauControlleur retourProjet = new TableauControlleur("Retour Projet");
-		this.NavBoite.add(BTN1);
-		this.NavBoite.add(BTN2);
-		this.NavBoite.add(BTN3);
 		this.NavBoite.add(retourProjet);
 		
 		this.PlusListeCarte = new TableauControlleur("+");
 		this.MilieuBoite = new JMilieu();
+		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 0, 0, 0));
 		this.MilieuBoite.add(PlusListeCarte);
 		
 			
 		//ici seront les appels de fonction des controlleurs...
-		//this.PlusListCarte.ActionDePlusTableau(this);
+		this.PlusListeCarte.ActionDePlusListeCarte(this);
 		
 		
-		this.NavBoite.setPreferredSize(new Dimension(App.longueur,30));	
+		this.NavBoite.setPreferredSize(new Dimension(App.longueur,52));	
 		add(this.NavBoite, BorderLayout.NORTH);
 		add(this.MilieuBoite, BorderLayout.CENTER);
 	}
@@ -75,9 +70,5 @@ public class JTableau extends JBoite{
 	
 	public Tableau getParametre() {
 		return this.Parametre;
-	}
-	
-	public String getNom() {
-		return this.Parametre.getNom();
 	}
 }

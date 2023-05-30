@@ -27,11 +27,13 @@ public class JAccueil extends JBoite{
 		this.Parametre = new Accueil(nom);
 		
 		this.NavBoite = new JNav(nom);
+		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		AccueilControlleur BTN1 = new AccueilControlleur("BTN1");
 		this.NavBoite.add(BTN1);
 		
 		this.PlusProjet = new AccueilControlleur("+");
 		this.MilieuBoite = new JMilieu();
+		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		this.MilieuBoite.add(PlusProjet);
 		
 			
@@ -39,7 +41,7 @@ public class JAccueil extends JBoite{
 		this.PlusProjet.ActionDePlusProjet(this);
 		
 		
-		this.NavBoite.setPreferredSize(new Dimension(App.longueur,90));	
+		this.NavBoite.setPreferredSize(new Dimension(App.longueur,60));	
 		add(this.NavBoite, BorderLayout.NORTH);
 		add(this.MilieuBoite, BorderLayout.CENTER);
 	}
@@ -66,7 +68,5 @@ public class JAccueil extends JBoite{
 		return this.PlusProjet;
 	}
 	
-	public String getNom() {
-		return this.Parametre.getNom();
-	}
+	
 }

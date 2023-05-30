@@ -6,6 +6,7 @@ import javax.swing.*;
 import App.App;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
 
@@ -26,10 +27,11 @@ public class AccueilControlleur extends BoiteControlleur{
 					nouveauProjet = new JButton(text);
 					nouveauProjet.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
-				        	jacc.getMilieu().removeAll();
-				        	jacc.getMilieu().add(P);
-				        	jacc.getMilieu().revalidate();
-							jacc.getMilieu().repaint();
+				        	App.MesMaps.Ajoute(jacc);
+				        	jacc.removeAll();
+				        	jacc.add(P);
+				        	jacc.revalidate();
+							jacc.repaint();
 				        }
 					});
 					jacc.getMilieu().add(nouveauProjet);

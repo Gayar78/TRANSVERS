@@ -10,8 +10,8 @@ import Modele.*;
 import Vue.*;
 
 public class App {
-		public JFrame frame;
-		public Map<String, JAccueil> MapAccueil;
+		public static JMaps MesMaps;
+	    public JFrame frame;
 		public final static int longueur = 1200;
 		public final static int largeur = 1000;
 		
@@ -22,9 +22,6 @@ public class App {
 			JAccueil acceuil = new JAccueil("Accueil");
 			frame.add(acceuil, BorderLayout.CENTER);
 			frame.setVisible(true);
-			
-			MapAccueil = new HashMap<>();
-			this.MapAccueil.put(acceuil.getNom(), acceuil);
 		}
 		
 	public static void main(String[] args) {
@@ -170,5 +167,5 @@ public class App {
 		App Rendu = new App();
 		Rendu.frame.setVisible(true);
 
-	}	
+	}
 }

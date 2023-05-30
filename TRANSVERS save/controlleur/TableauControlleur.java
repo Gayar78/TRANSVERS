@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+import App.App;
 import Vue.*;
 
 public class TableauControlleur extends BoiteControlleur{
@@ -25,10 +26,11 @@ public class TableauControlleur extends BoiteControlleur{
 					nouveauListeCArte = new JButton(text);
 					nouveauListeCArte.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
-				        	jtab.getMilieu().removeAll();
-				        	jtab.getMilieu().add(L);
-				        	jtab.getMilieu().revalidate();
-							jtab.getMilieu().repaint();
+				        	App.MesMaps.Ajoute(jtab);
+				        	jtab.removeAll();
+				        	jtab.add(L);
+				        	jtab.revalidate();
+							jtab.repaint();
 				        }
 					});
 					jtab.getMilieu().add(nouveauListeCArte);

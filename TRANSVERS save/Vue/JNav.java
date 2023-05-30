@@ -18,6 +18,8 @@ public class JNav extends JPanel{
 	 */
 	public JNav(String titre){
 		super(new GridLayout(1,3));
+		GridLayout layout = (GridLayout) this.getLayout();
+		layout.setHgap(15);
 		JLabel Titre = new JLabel(titre);
 		Titre.setHorizontalAlignment(JLabel.CENTER);
 		this.add(Titre);
@@ -41,6 +43,10 @@ public class JNav extends JPanel{
 	
 	public BoiteControlleur getBouton(int position) {
 		return ListeBouton.get(position);
+	}
+	
+	public BoiteControlleur getDernierBouton() {
+		return ListeBouton.get(nbComposant-1);
 	}
 	
 	public String getTitreNav() {

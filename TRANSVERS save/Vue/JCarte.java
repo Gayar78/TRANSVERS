@@ -1,8 +1,14 @@
-/*package Vue;
-/*
- * classe JCarte, étends JBoite
- * Affichage graphique de la classe Carte
- *
-public class JCarte extends JBoite{
+package Vue;
 
-}*/
+import Modele.*;
+
+public class JCarte extends JBoite{
+	Carte Parametre;
+	public JCarte(String nom){
+		super(nom);
+	}
+	
+	public Carte getParametre() {
+		return this.Parametre;
+	}
+}

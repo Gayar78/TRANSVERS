@@ -17,7 +17,9 @@ public class JMilieu extends JPanel{
 	 * et affiche le titre dans un JLabel, et des boutons
 	 */
 	public JMilieu(){
-		super(new GridLayout(1,4));
+		super(new GridLayout(1,5));
+		GridLayout layout = (GridLayout) this.getLayout();
+		layout.setHgap(15);
 	}
 	
 	public void ajouteComposantMilieu(BoiteControlleur Boite) {

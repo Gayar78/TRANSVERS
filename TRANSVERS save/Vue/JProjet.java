@@ -17,7 +17,7 @@ import javax.swing.*;
  */
 public class JProjet extends JBoite{
 	Projet Parametre;
-	ProjetControlleur PlusTableau;
+	ProjetControlleur PlusTableau,RetourAccueil;
 	Map<String, JTableau> ListeTableau;
 	
 	public JProjet(String nom){
@@ -26,24 +26,21 @@ public class JProjet extends JBoite{
 		
 		this.Parametre = new Projet(nom);
 		
-		this.NavBoite = new JNav(nom);
-		ProjetControlleur BTN1 = new ProjetControlleur("BTN1");
-		ProjetControlleur BTN2 = new ProjetControlleur("BTN2");
-		ProjetControlleur BTN3 = new ProjetControlleur("Retour Accueil");
-		this.NavBoite.add(BTN1);
-		this.NavBoite.add(BTN2);
-		this.NavBoite.add(BTN3);
+		RetourAccueil = new ProjetControlleur("Retour Accueil");
+		this.NavBoite.add(RetourAccueil);
 		
 		this.PlusTableau = new ProjetControlleur("+");
 		this.MilieuBoite = new JMilieu();
+		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 0, 0, 0));
 		this.MilieuBoite.add(PlusTableau);
 		
 			
 		//ici seront les appels de fonction des controlleurs...
 		this.PlusTableau.ActionDePlusTableau(this);
+		RetourAccueil.RetourAccueil(this);
 		
 		
-		this.NavBoite.setPreferredSize(new Dimension(App.longueur,60));	
+		this.NavBoite.setPreferredSize(new Dimension(App.longueur,56));	
 		add(this.NavBoite, BorderLayout.NORTH);
 		add(this.MilieuBoite, BorderLayout.CENTER);
 	}
@@ -69,12 +66,11 @@ public class JProjet extends JBoite{
 	public ProjetControlleur getPlusTableau() {
 		return this.PlusTableau;
 	}
+	public ProjetControlleur getRetourAccueil() {
+		return this.RetourAccueil;
+	}
 	
 	public Projet getParametre() {
 		return this.Parametre;
-	}
-	
-	public String getNom() {
-		return this.Parametre.getNom();
 	}
 }

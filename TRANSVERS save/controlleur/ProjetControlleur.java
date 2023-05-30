@@ -3,6 +3,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
+import App.App;
 import Vue.*;
 import Modele.*;
 
@@ -23,10 +24,11 @@ public class ProjetControlleur extends BoiteControlleur{
 					nouveauTableau = new JButton(text);
 					nouveauTableau.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
-				        	jProg.getMilieu().removeAll();
-				        	jProg.getMilieu().add(T);
-				        	jProg.getMilieu().revalidate();
-							jProg.getMilieu().repaint();
+				        	App.MesMaps.Ajoute(jProg);
+				        	jProg.removeAll();
+				        	jProg.add(T);
+				        	jProg.revalidate();
+							jProg.repaint();
 				        }
 					});
 					jProg.getMilieu().add(nouveauTableau);
@@ -38,7 +40,7 @@ public class ProjetControlleur extends BoiteControlleur{
 	}
 	
 	public void RetourAccueil(JProjet jProg) {
-		jProg.getNav().getBouton(2).addActionListener(new ActionListener() { 
+		jProg.getRetourAccueil().addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("RetourAccueil");
 			}
