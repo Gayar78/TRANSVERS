@@ -8,6 +8,7 @@ import Modele.*;
 
 public class ProjetControlleur extends BoiteControlleur{
 	JButton nouveauTableau;
+	JTableau T;
 	
 	public ProjetControlleur(String nom) {
 		super(nom);
@@ -18,15 +19,16 @@ public class ProjetControlleur extends BoiteControlleur{
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jProg.getNbTableau()<4) {
 	        		String text = JOptionPane.showInputDialog("Entrez le nom du tableau");
-					JTableau T = new JTableau(text);
+					T = new JTableau(text,jProg.getFrame(), jProg);
 					jProg.ajouterTableau(T);
 					nouveauTableau = new JButton(text);
 					nouveauTableau.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
-				        	jProg.removeAll();
-				        	jProg.add(T);
-				        	jProg.revalidate();
-							jProg.repaint();
+				        	T.setVisible(true);
+				        	jProg.setVisible(false);
+				        	jProg.getFrame().add(T);
+				        	jProg.getFrame().revalidate();
+							jProg.getFrame().repaint();
 				        }
 					});
 					jProg.getMilieu().add(nouveauTableau);
@@ -37,10 +39,11 @@ public class ProjetControlleur extends BoiteControlleur{
 		});
 	}
 	
-	public void RetourAccueil(JProjet jProg) {
+	public void RetourAccueil(JProjet jProg, JAccueil jacc) {
 		jProg.getRetourAccueil().addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("RetourAccueil");
+				jProg.setVisible(false);
+				jacc.setVisible(true);
 			}
 		});
 	}

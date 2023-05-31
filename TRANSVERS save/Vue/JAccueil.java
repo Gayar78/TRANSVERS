@@ -17,11 +17,13 @@ import javax.swing.*;
  */
 public class JAccueil extends JBoite{
 	Accueil Parametre;
+	JFrame frame;
 	AccueilControlleur PlusProjet;
 	Map<String, JProjet> ListeProjet;
 	
-	public JAccueil(String nom){
+	public JAccueil(String nom, JFrame frame){
 		super(nom);
+		this.frame = frame;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		ListeProjet = new HashMap<>();
@@ -64,6 +66,10 @@ public class JAccueil extends JBoite{
 	
 	public AccueilControlleur getPlusProjet() {
 		return this.PlusProjet;
+	}
+	
+	public JFrame getFrame() {
+		return this.frame;
 	}
 	
 	

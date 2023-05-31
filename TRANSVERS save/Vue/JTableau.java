@@ -6,9 +6,7 @@ import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import App.App;
 import Modele.*;
@@ -20,10 +18,12 @@ import controlleur.*;
  */
 public class JTableau extends JBoite{
 	Tableau Parametre;
+	JFrame frame;
 	TableauControlleur PlusListeCarte,RetourProjet;
 	Map<String, JListeCarte> ListeListeCarte;
-	public JTableau(String nom){
+	public JTableau(String nom, JFrame frame, JProjet Projet){
 		super(nom);
+		this.frame = frame;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		
@@ -40,7 +40,7 @@ public class JTableau extends JBoite{
 			
 		//ici seront les appels de fonction des controlleurs...
 		this.PlusListeCarte.ActionDePlusListeCarte(this);
-		RetourProjet.RetourProjet(this);
+		RetourProjet.RetourProjet(this, Projet);
 		
 		
 		this.NavBoite.setPreferredSize(new Dimension(App.longueur,52));	
@@ -76,5 +76,9 @@ public class JTableau extends JBoite{
 	
 	public Tableau getParametre() {
 		return this.Parametre;
+	}
+	
+	public JFrame getFrame() {
+		return this.frame;
 	}
 }

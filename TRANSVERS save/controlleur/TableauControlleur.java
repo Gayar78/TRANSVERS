@@ -11,6 +11,7 @@ import Vue.*;
 
 public class TableauControlleur extends BoiteControlleur{
 	JButton nouveauListeCArte;
+	JListeCarte L;
 	
 	public TableauControlleur(String nom) {
 		super(nom);
@@ -21,15 +22,16 @@ public class TableauControlleur extends BoiteControlleur{
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jtab.getNbListeCarte()<4) {
 	        		String text = JOptionPane.showInputDialog("Entrez le nom de la liste");
-					JListeCarte L = new JListeCarte(text);
+					L = new JListeCarte(text,jtab.getFrame(), jtab);
 					jtab.ajouterListeCart(L);
 					nouveauListeCArte = new JButton(text);
 					nouveauListeCArte.addActionListener(new ActionListener() { 
 				        public void actionPerformed(ActionEvent e) {
-				        	jtab.removeAll();
-				        	jtab.add(L);
-				        	jtab.revalidate();
-							jtab.repaint();
+				        	L.setVisible(true);
+				        	jtab.setVisible(false);
+				        	jtab.getFrame().add(L);
+				        	jtab.getFrame().revalidate();
+							jtab.getFrame().repaint();
 				        }
 					});
 					jtab.getMilieu().add(nouveauListeCArte);
@@ -40,10 +42,11 @@ public class TableauControlleur extends BoiteControlleur{
 		});
 	}
 	
-	public void RetourProjet(JTableau jtab) {
+	public void RetourProjet(JTableau jtab, JProjet jProg) {
 		jtab.getRetourProjet().addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("RetourProjet");
+				jtab.setVisible(false);
+				jProg.setVisible(true);
 			}
 		});
 	}

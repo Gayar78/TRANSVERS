@@ -18,8 +18,10 @@ public class JListeCarte extends JBoite{
 	ListeCarte Parametre;
 	ListeCarteControlleur PlusCarte,RetourTableau;
 	Map<String, JCarte> Cartes;
-	public JListeCarte(String nom){
+	JFrame frame;
+	public JListeCarte(String nom, JFrame frame, JTableau Tableau){
 		super(nom);
+		this.frame = frame;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		Cartes = new HashMap<>();
@@ -35,7 +37,7 @@ public class JListeCarte extends JBoite{
 			
 		//ici seront les appels de fonction des controlleurs...
 		//this.PlusListCarte.ActionDePlusTableau(this);
-		RetourTableau.RetourTableau(this);
+		RetourTableau.RetourTableau(this, Tableau);
 		
 		
 		this.NavBoite.setPreferredSize(new Dimension(App.longueur,48));	
@@ -71,6 +73,10 @@ public class JListeCarte extends JBoite{
 	
 	public ListeCarteControlleur getRetourTableau() {
 		return this.RetourTableau;
+	}
+	
+	public JFrame getFrame() {
+		return this.frame;
 	}
 	
 }
