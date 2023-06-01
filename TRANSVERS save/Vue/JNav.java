@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class JNav extends JPanel{
 	int nbComposant;
 	String titre;
+	JLabel Titre;
 	ArrayList<BoiteControlleur>ListeBouton= new ArrayList<BoiteControlleur>();;
 	/*
 	 * Constructeur de la classe JNav, qui initialise un Panel, des composants, un titre
@@ -20,7 +21,7 @@ public class JNav extends JPanel{
 		super(new GridLayout(1,3));
 		GridLayout layout = (GridLayout) this.getLayout();
 		layout.setHgap(15);
-		JLabel Titre = new JLabel(titre);
+		Titre = new JLabel(titre);
 		Titre.setHorizontalAlignment(JLabel.CENTER);
 		this.add(Titre);
 	}
@@ -51,5 +52,10 @@ public class JNav extends JPanel{
 	
 	public String getTitreNav() {
 		return this.titre;
+	}
+	
+	public void setTitre(String titre) {
+		this.Titre.setName(titre);
+		this.titre = titre;
 	}
 }

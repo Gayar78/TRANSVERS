@@ -14,12 +14,11 @@ import javax.swing.*;
  */
 public class JAccueil extends JBoite{
 	JFrame frame;
-	AccueilControlleur PlusProjet;
 	Accueil Parametre;
 	ArrayList<JProjet> ListeProjet;
 	
-	public JAccueil(String nom,Accueil boite, JFrame frame){
-		super(nom,boite);
+	public JAccueil(String nom, Accueil boite, JFrame frame){
+		super(nom,boite,frame);
 		this.frame = frame;
 		Parametre = boite;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
@@ -29,12 +28,12 @@ public class JAccueil extends JBoite{
 		AccueilControlleur BTN1 = new AccueilControlleur("BTN1");
 		this.NavBoite.add(BTN1);
 		
-		this.PlusProjet = new AccueilControlleur("+");
-		this.MilieuBoite.add(PlusProjet);
+		this.PlusBoite = new AccueilControlleur("+");
+		this.MilieuBoite.add(PlusBoite);
 		
 			
 		//ici seront les appels de fonction des controlleurs...
-		this.PlusProjet.ActionDePlusProjet(this);
+		((AccueilControlleur) this.PlusBoite).ActionDePlusProjet(this);
 		
 		
 		this.NavBoite.setPreferredSize(new Dimension(App.longueur,60));	
@@ -48,15 +47,9 @@ public class JAccueil extends JBoite{
 	
 	public void retirerProjet(JProjet p) {
 		this.retirBoite(p);
+	}	
+	
+	public BoiteControlleur getPlusProjet() {
+		return this.getPlusBoite();
 	}
-	
-	public AccueilControlleur getPlusProjet() {
-		return this.PlusProjet;
-	}
-	
-	public JFrame getFrame() {
-		return this.frame;
-	}
-	
-	
 }

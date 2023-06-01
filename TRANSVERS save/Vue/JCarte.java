@@ -7,7 +7,7 @@ public class JCarte extends JBoite{
 	Carte Parametre;
 	JFrame frame;
 	public JCarte(String nom,Carte boite, JFrame frame, JListeCarte ListeCarte){
-		super(nom,boite);
+		super("Carte : "+nom,boite,frame);
 		this.frame = frame;
 		Parametre = boite;
 	}

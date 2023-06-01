@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Classe abstraite boite : Permet de faire des boites pour séparer les données et les afficher comme on le souhaite.
  * Chaque boite (ie : Accueil, Projet, Tableau, ListeCarte et Carte) possède un nom et des membres et listes de membres
  */
-public abstract class Boite {
+public class Boite {
 	public String nom;
 	public ArrayList<Membre> participants;
 	int indentation;
@@ -18,7 +18,7 @@ public abstract class Boite {
 	 * Constructeur de la classe Boite
 	 * initialise le nom de cette boite.
 	 */
-	Boite(String nom){
+	public Boite(String nom){
 		this.nom = nom;
 		this.ListeBoite = new ArrayList<>();
 		this.nbBoite = 0;

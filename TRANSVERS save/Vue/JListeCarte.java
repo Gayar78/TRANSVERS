@@ -13,11 +13,11 @@ import controlleur.*;
  */
 public class JListeCarte extends JBoite{
 	ListeCarte Parametre;
-	ListeCarteControlleur PlusCarte,RetourTableau;
+	ListeCarteControlleur RetourTableau;
 	ArrayList<JCarte> Cartes;
 	JFrame frame;
 	public JListeCarte(String nom,ListeCarte boite, JFrame frame, JTableau Tableau){
-		super(nom,boite);
+		super("Liste de Carte : "+nom,boite,frame);
 		this.frame = frame;
 		Parametre = boite;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
@@ -27,12 +27,12 @@ public class JListeCarte extends JBoite{
 		RetourTableau = new ListeCarteControlleur("Retour Tableau");
 		this.NavBoite.add(RetourTableau);
 		
-		this.PlusCarte = new ListeCarteControlleur("+");
-		this.MilieuBoite.add(PlusCarte);
+		this.PlusBoite = new ListeCarteControlleur("+");
+		this.MilieuBoite.add(PlusBoite);
 		
 			
 		//ici seront les appels de fonction des controlleurs...
-		//this.PlusListCarte.ActionDePlusTableau(this);
+		//((ListeCarteControlleur) this.PlusBoite).ActionDePlusTableau(this);
 		RetourTableau.RetourTableau(this, Tableau);
 		
 		
@@ -53,8 +53,8 @@ public class JListeCarte extends JBoite{
 		return getNbBoite();
 	}
 	
-	public ListeCarteControlleur getPlusCarte() {
-		return this.PlusCarte;
+	public BoiteControlleur getPlusCarte() {
+		return this.getPlusBoite();
 	}
 	
 	public ListeCarte getParametre() {
