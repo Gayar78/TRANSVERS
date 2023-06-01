@@ -22,7 +22,7 @@ public class JTableau extends JBoite{
 	TableauControlleur PlusListeCarte,RetourProjet;
 	Map<String, JListeCarte> ListeListeCarte;
 	public JTableau(String nom, JFrame frame, JProjet Projet){
-		super(nom);
+		super("Tableau : "+nom);
 		this.frame = frame;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
