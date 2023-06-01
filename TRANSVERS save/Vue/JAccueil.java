@@ -21,8 +21,8 @@ public class JAccueil extends JBoite{
 	AccueilControlleur PlusProjet;
 	Map<String, JProjet> ListeProjet;
 	
-	public JAccueil(JFrame frame){
-		super("Accueil");
+	public JAccueil(String nom, JFrame frame){
+		super(nom);
 		this.frame = frame;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));

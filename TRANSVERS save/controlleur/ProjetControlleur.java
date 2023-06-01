@@ -19,23 +19,22 @@ public class ProjetControlleur extends BoiteControlleur{
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jProg.getNbTableau()<4) {
 	        		String text = JOptionPane.showInputDialog("Entrez le nom du tableau");
-	        		if(text != null) {
-						T = new JTableau(text,jProg.getFrame(), jProg);
-						jProg.ajouterTableau(T);
-						nouveauTableau = new JButton(text);
-						nouveauTableau.addActionListener(new ActionListener() { 
-					        public void actionPerformed(ActionEvent e) {
-					        	T.setVisible(true);
-					        	jProg.setVisible(false);
-					        	jProg.getFrame().add(T);
-					        	jProg.getFrame().revalidate();
-								jProg.getFrame().repaint();
-					        }
-						});
-						jProg.getMilieu().add(nouveauTableau);
-						jProg.getMilieu().revalidate();
-						jProg.getMilieu().repaint();
-	        		}
+					T = new JTableau(text,jProg.getFrame(), jProg);
+					jProg.ajouterTableau(T);
+					nouveauTableau = new JButton(text);
+					nouveauTableau.addActionListener(new ActionListener() { 
+				        public void actionPerformed(ActionEvent e) {
+				        	T.setVisible(true);
+				        	jProg.setVisible(false);
+				        	jProg.getFrame().add(T);
+				        	jProg.getFrame().revalidate();
+							jProg.getFrame().repaint();
+				        }
+					});
+					jProg.getMilieu().add(nouveauTableau);
+					jProg.getMilieu().revalidate();
+					jProg.getMilieu().repaint();
+					new BoutonSuppr(jProg.getMilieu(),nouveauTableau,T);
 	        	}		
 		    }
 		});

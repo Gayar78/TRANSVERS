@@ -18,7 +18,7 @@ public class App {
 			this.frame = new JFrame("TrelloLite");
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			this.frame.setSize(longueur, largeur);
-			JAccueil acceuil = new JAccueil(frame);
+			JAccueil acceuil = new JAccueil("Accueil",frame);
 			frame.add(acceuil, BorderLayout.CENTER);
 			frame.setVisible(true);
 		}

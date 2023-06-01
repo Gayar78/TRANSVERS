@@ -20,7 +20,7 @@ public class JListeCarte extends JBoite{
 	Map<String, JCarte> Cartes;
 	JFrame frame;
 	public JListeCarte(String nom, JFrame frame, JTableau Tableau){
-		super("Liste de Cartes : "+nom);
+		super(nom);
 		this.frame = frame;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));

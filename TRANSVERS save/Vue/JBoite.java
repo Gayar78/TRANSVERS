@@ -37,4 +37,8 @@ public abstract class JBoite extends JPanel {
 	public String getNom() {
 		return this.nom;
 	}
+
+	public void finalize() {
+		
+	}
 }

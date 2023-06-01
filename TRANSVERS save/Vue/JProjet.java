@@ -22,7 +22,7 @@ public class JProjet extends JBoite{
 	Map<String, JTableau> ListeTableau;
 	
 	public JProjet(String nom, JFrame frame, JAccueil Accueil){
-		super("Projet : "+nom);
+		super(nom);
 		this.frame = frame;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
