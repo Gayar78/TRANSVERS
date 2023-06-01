@@ -19,7 +19,7 @@ public class ListeCarteControlleur extends BoiteControlleur {
 		jlist.getPlusCarte().addActionListener(new ActionListener() { 
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jlist.getNbBoite()<4) {
-					String text = JOptionPane.showInputDialog("Entrez le nom du projet");
+					String text = JOptionPane.showInputDialog("Entrez le nom de la carte");
 					Carte carte = new Carte(text);
 					JCarte Jlistecarte = new JCarte (text,carte,jlist.getFrame(),jlist);
 					ActionDePlusBoite(jlist, Jlistecarte);

@@ -19,7 +19,7 @@ public class TableauControlleur extends BoiteControlleur{
 		jtab.getPlusListeCarte().addActionListener(new ActionListener() { 
 		    public void actionPerformed(ActionEvent e) {
 		        if(jtab.getNbBoite()<4) {
-					String text = JOptionPane.showInputDialog("Entrez le nom du projet");
+					String text = JOptionPane.showInputDialog("Entrez le nom de la liste de carte");
 					ListeCarte listecarte = new ListeCarte(text);
 					JListeCarte Jlistecarte = new JListeCarte (text,listecarte,jtab.getFrame(),jtab);
 					ActionDePlusBoite(jtab, Jlistecarte);

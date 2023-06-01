@@ -16,7 +16,7 @@ public class ProjetControlleur extends BoiteControlleur{
 		jProg.getPlusTableau().addActionListener(new ActionListener() { 
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jProg.getNbBoite()<4) {
-					String text = JOptionPane.showInputDialog("Entrez le nom du projet");
+					String text = JOptionPane.showInputDialog("Entrez le nom du tableau");
 					Tableau tableau = new Tableau(text);
 					JTableau Jtableau  = new JTableau (text,tableau,jProg.getFrame(),jProg);
 					ActionDePlusBoite(jProg, Jtableau);
