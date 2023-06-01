@@ -22,21 +22,23 @@ public class TableauControlleur extends BoiteControlleur{
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jtab.getNbListeCarte()<4) {
 	        		String text = JOptionPane.showInputDialog("Entrez le nom de la liste");
-					L = new JListeCarte(text,jtab.getFrame(), jtab);
-					jtab.ajouterListeCart(L);
-					nouveauListeCArte = new JButton(text);
-					nouveauListeCArte.addActionListener(new ActionListener() { 
-				        public void actionPerformed(ActionEvent e) {
-				        	L.setVisible(true);
-				        	jtab.setVisible(false);
-				        	jtab.getFrame().add(L);
-				        	jtab.getFrame().revalidate();
-							jtab.getFrame().repaint();
-				        }
-					});
-					jtab.getMilieu().add(nouveauListeCArte);
-					jtab.getMilieu().revalidate();
-					jtab.getMilieu().repaint();
+	        		if(text != null) {
+						L = new JListeCarte(text,jtab.getFrame(), jtab);
+						jtab.ajouterListeCart(L);
+						nouveauListeCArte = new JButton(text);
+						nouveauListeCArte.addActionListener(new ActionListener() { 
+					        public void actionPerformed(ActionEvent e) {
+					        	L.setVisible(true);
+					        	jtab.setVisible(false);
+					        	jtab.getFrame().add(L);
+					        	jtab.getFrame().revalidate();
+								jtab.getFrame().repaint();
+					        }
+						});
+						jtab.getMilieu().add(nouveauListeCArte);
+						jtab.getMilieu().revalidate();
+						jtab.getMilieu().repaint();
+	        		}
 	        	}		
 		    }
 		});
