@@ -30,32 +30,16 @@ public class ListeCarte extends Boite{
 		this.ListeCarte = cartes;
 	}
 	
-	/*
-	 * procédure ajouterCarte
-	 * Prend en paramètre une Carte
-	 * l'ajoute à la liste de Cartes 
-	 */
-	public void ajouterCarte(Carte carte) {
-		carte.setId(this.nbCarte);
-		this.ListeCarte.add(carte);
-		this.nbCarte ++;
+	public void ajouteCarte(Carte c) {
+		this.ajouterBoite(c);
 	}
-	/*
-	 * procédure retirerCarte
-	 * prend un indentifiant entier en paramètre
-	 * supprime la carte située à l'emplacement de l'identifiant dans la liste de cartes
-	 */
-	public void retirerCarte(int id){
-		for(int i = 0; i<ListeCarte.size();i++) {
-			int particip = ListeCarte.get(i).getId();
-			if(id == particip) {
-				ListeCarte.remove(i);
-			}
-		}
+	
+	public void retirerCarte(int id) {
+		this.retirerBoite(id);
 	}
 	
 	public int getNbCarte() {
-		return this.nbCarte;
+		return getNbBoite();
 	}
 	
 	/*

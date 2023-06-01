@@ -8,7 +8,7 @@ import Modele.*;
 
 public class ProjetControlleur extends BoiteControlleur{
 	JButton nouveauTableau;
-	JTableau T;
+	JTableau Jtableau;
 	
 	public ProjetControlleur(String nom) {
 		super(nom);
@@ -19,22 +19,25 @@ public class ProjetControlleur extends BoiteControlleur{
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jProg.getNbTableau()<4) {
 	        		String text = JOptionPane.showInputDialog("Entrez le nom du tableau");
-					T = new JTableau(text,jProg.getFrame(), jProg);
-					jProg.ajouterTableau(T);
-					nouveauTableau = new JButton(text);
-					nouveauTableau.addActionListener(new ActionListener() { 
-				        public void actionPerformed(ActionEvent e) {
-				        	T.setVisible(true);
-				        	jProg.setVisible(false);
-				        	jProg.getFrame().add(T);
-				        	jProg.getFrame().revalidate();
-							jProg.getFrame().repaint();
-				        }
-					});
-					jProg.getMilieu().add(nouveauTableau);
-					jProg.getMilieu().revalidate();
-					jProg.getMilieu().repaint();
-					new BoutonSuppr(jProg.getMilieu(),nouveauTableau,T);
+	        		if(text != null) {
+	        			Tableau tableau = new Tableau(text);
+						Jtableau = new JTableau(text,tableau,jProg.getFrame(), jProg);
+						jProg.ajouteTableau(Jtableau);
+						nouveauTableau = new JButton(text);
+						nouveauTableau.addActionListener(new ActionListener() { 
+					        public void actionPerformed(ActionEvent e) {
+					        	Jtableau.setVisible(true);
+					        	jProg.setVisible(false);
+					        	jProg.getFrame().add(Jtableau);
+					        	jProg.getFrame().revalidate();
+								jProg.getFrame().repaint();
+					        }
+						});
+						jProg.getMilieu().add(nouveauTableau);
+						jProg.getMilieu().revalidate();
+						jProg.getMilieu().repaint();
+						//new BoutonSuppr(jProg.getMilieu(),nouveauTableau,T);
+	        		}
 	        	}		
 		    }
 		});

@@ -12,6 +12,7 @@ import java.awt.event.*;
 
 public class AccueilControlleur extends BoiteControlleur{
 	JButton nouveauProjet;
+	JProjet Jprojet;
 	
 	public AccueilControlleur(String nom) {
 		super(nom);
@@ -20,24 +21,30 @@ public class AccueilControlleur extends BoiteControlleur{
 	public void ActionDePlusProjet(JAccueil jacc) {
 		jacc.getPlusProjet().addActionListener(new ActionListener() { 
 	        public void actionPerformed(ActionEvent e) {
-	        	if(jacc.getNbProjets()<4) {
+	        	if(jacc.getNbBoite()<4) {
 	        		String text = JOptionPane.showInputDialog("Entrez le nom du projet");
-					JProjet P = new JProjet(text, jacc.getFrame(), jacc);
-					jacc.ajouterProjet(P);
-					nouveauProjet = new JButton(text);
-					nouveauProjet.addActionListener(new ActionListener() { 
-				        public void actionPerformed(ActionEvent e) {
-				        	P.setVisible(true);
-				        	jacc.setVisible(false);
-				        	jacc.getFrame().add(P);
-				        	jacc.getFrame().revalidate();
-							jacc.getFrame().repaint();
-				        }
-					});
-					jacc.getMilieu().add(nouveauProjet);
-					jacc.getMilieu().revalidate();
-					jacc.getMilieu().repaint();
-					new BoutonSuppr(jacc.getMilieu(),nouveauProjet,P);
+	        		if(text != null) {
+	        			Projet projet = new Projet(text);
+						Jprojet = new JProjet(text,projet, jacc.getFrame(), jacc);
+						jacc.ajouteProjet(Jprojet);
+						nouveauProjet = new JButton(text);
+						JPanel InfoProjet = new JPanel(new BorderLayout());
+						BoutonSuppr BoutonSuppr = new BoutonSuppr(jacc,InfoProjet,Jprojet);
+						InfoProjet.add(nouveauProjet,BorderLayout.CENTER);
+						InfoProjet.add(BoutonSuppr,BorderLayout.SOUTH);
+						nouveauProjet.addActionListener(new ActionListener() { 
+					        public void actionPerformed(ActionEvent e) {
+					        	Jprojet.setVisible(true);
+					        	jacc.setVisible(false);
+					        	jacc.getFrame().add(Jprojet);
+					        	jacc.getFrame().revalidate();
+								jacc.getFrame().repaint();
+					        }
+						});
+						jacc.getMilieu().add(InfoProjet);
+						jacc.getMilieu().revalidate();
+						jacc.getMilieu().repaint();
+	        		}
 	        	}		
 		    }
 		});

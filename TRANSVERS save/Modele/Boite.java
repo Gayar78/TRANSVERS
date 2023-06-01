@@ -11,6 +11,8 @@ public abstract class Boite {
 	public ArrayList<Membre> participants;
 	int indentation;
 	int id;
+	private ArrayList<Boite> ListeBoite;
+	private int nbBoite;
 	
 	/*
 	 * Constructeur de la classe Boite
@@ -18,7 +20,41 @@ public abstract class Boite {
 	 */
 	Boite(String nom){
 		this.nom = nom;
+		this.ListeBoite = new ArrayList<>();
+		this.nbBoite = 0;
 	}
+	
+	/*
+	 * procédure ajouterProjet
+	 * prend en paramètre un projet, et l'ajoute à la liste de projets
+	 */
+	public void ajouterBoite(Boite boite) {
+		boite.setId(this.nbBoite);
+		this.ListeBoite.add(boite);
+		this.nbBoite ++;
+	}
+
+	/*
+	 * procédure retirerProjet
+	 * prend en paramètre un identifiant entier
+	 * supprime le projet qui correspond à l'identifiant indiqué
+	 */
+	public void retirerBoite(int id){
+		for(int i = 0; i<ListeBoite.size();i++) {
+			int particip = ListeBoite.get(i).getId();
+			if(id == particip) {
+				ListeBoite.remove(i);
+			}
+		}
+	}
+	
+	/*
+	 * getter getNbProjet, renvoie le nombre de projets dans la liste
+	 */
+	public int getNbBoite() {
+		return ListeBoite.size();
+	}
+	
 	/*
 	 * getter getMembre, renvoie la liste de membres
 	 */

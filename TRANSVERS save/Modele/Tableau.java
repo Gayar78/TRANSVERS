@@ -26,30 +26,13 @@ public class Tableau extends Boite {
 	public void changeNomTableau(String nom) {
 		this.nom = nom;
 	}
-
-	/* creerListe :
-	 * ne renvoie rien
-	 * paramètre : ListeCartes
-	 * ajoute une liste de cartes à la liste de listes de cartes du tableau (on veut avoir plusieurs listes de cartes dans un tableau)
-	 * */
-	public void ajouterListeCarte(ListeCarte uneListeCarte) {
-		uneListeCarte.setId(this.nbListe);
-		this.desListeCarte.add(uneListeCarte);
-		this.nbListe ++;
+	
+	public void ajouteListeCarte(ListeCarte lc) {
+		this.ajouterBoite(lc);
 	}
-
-	/* retirertableau
-	 * ne renvoie rien 
-	 * paramètre : indice du tableau de la liste
-	 * retire le tableau indiqué par l'indice pris en paramètre si celui-ci est correct. Envoie une exception dans le cas contraire.
-	 */
-	public void retirerListeCarte(int id){
-		for(int i = 0; i<desListeCarte.size();i++) {
-			int Id_DeListeCarte = desListeCarte.get(i).getId();
-			if(id == Id_DeListeCarte) {
-				desListeCarte.remove(i);
-			}
-		}
+	
+	public void retirerListeCarte(int id) {
+		this.retirerBoite(id);
 	}
 	
 	/*
@@ -64,7 +47,7 @@ public class Tableau extends Boite {
 	}
 	
 	public int getNbListeCarte() {
-		return this.nbListe;
+		return getNbBoite();
 	}
 	
 	public void supprimerTableau() {

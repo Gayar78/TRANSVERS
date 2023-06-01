@@ -1,11 +1,8 @@
 package App;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
+import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.*;
-import controlleur.*;
 import Modele.*;
 import Vue.*;
 
@@ -18,8 +15,9 @@ public class App {
 			this.frame = new JFrame("TrelloLite");
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			this.frame.setSize(longueur, largeur);
-			JAccueil acceuil = new JAccueil("Accueil",frame);
-			frame.add(acceuil, BorderLayout.CENTER);
+			Accueil accueil = new Accueil("Accueil");
+			JAccueil Jacceuil = new JAccueil("Accueil",accueil,frame);
+			frame.add(Jacceuil, BorderLayout.CENTER);
 			frame.setVisible(true);
 		}
 		
@@ -43,7 +41,7 @@ public class App {
 			System.out.println("------------- Tests de la classe Carte ------------");
 			System.out.println("");
 			System.out.println("---------- Tests de la classe ListeCarte ----------");
-			liste.ajouterCarte(carte);
+			liste.ajouteCarte(carte);
 			System.out.print("AjouterCarte  : ");
 			if (liste.getCartes().size() == 1) {
 				System.out.println("         OK");
@@ -87,7 +85,7 @@ public class App {
 			} else {
 				System.out.println("       ERR");
 			}
-			tab.ajouterListeCarte(list);
+			tab.ajouteListeCarte(list);
 			System.out.print("AjouterListe : ");
 			if (tab.getListesCartes().size() == 1) {
 				System.out.println("          OK");
@@ -123,7 +121,7 @@ public class App {
 			}
 			System.out.println("");
 			System.out.println("------------- Tests de la classe Projet --------------");
-			proj.ajouterTableau(tab);
+			proj.ajouteTableau(tab);
 			System.out.printf("Ajoutertableau : ");
 			if(proj.getTableaux().size()==1) {
 				System.out.println("        OK");

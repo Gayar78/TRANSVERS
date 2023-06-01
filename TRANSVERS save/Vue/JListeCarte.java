@@ -1,11 +1,8 @@
 package Vue;
 
 import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
-
+import java.util.ArrayList;
 import javax.swing.*;
-
 import App.App;
 import Modele.*;
 import controlleur.*;
@@ -17,16 +14,15 @@ import controlleur.*;
 public class JListeCarte extends JBoite{
 	ListeCarte Parametre;
 	ListeCarteControlleur PlusCarte,RetourTableau;
-	Map<String, JCarte> Cartes;
+	ArrayList<JCarte> Cartes;
 	JFrame frame;
-	public JListeCarte(String nom, JFrame frame, JTableau Tableau){
-		super(nom);
+	public JListeCarte(String nom,ListeCarte boite, JFrame frame, JTableau Tableau){
+		super(nom,boite);
 		this.frame = frame;
+		Parametre = boite;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
-		Cartes = new HashMap<>();
-		
-		this.Parametre = new ListeCarte(nom);
+		Cartes = new ArrayList<JCarte>();
 		
 		RetourTableau = new ListeCarteControlleur("Retour Tableau");
 		this.NavBoite.add(RetourTableau);
@@ -45,22 +41,16 @@ public class JListeCarte extends JBoite{
 		add(this.MilieuBoite, BorderLayout.CENTER);
 	}
 	
-	public void ajouterCart(JCarte l) {
-		this.Cartes.put(l.getNom(),l);
-		this.Parametre.ajouterCarte(l.getParametre());
+	public void ajouteCarte(JCarte c) {
+		this.ajouterBoite(c);
 	}
 	
-	public void retirCarte(JCarte l) {
-		for (Map.Entry<String, JCarte> entry : this.Cartes.entrySet()) {
-	        if (entry.getValue() == l) {
-	        	this.Cartes.remove(entry.getKey());
-	        }
-	    }
-		this.Parametre.retirerCarte(l.getParametre().getId());
+	public void retirerCarte(JCarte c) {
+		this.retirBoite(c);
 	}
 	
 	public int getNbCarte() {
-		return this.Parametre.getNbCarte();
+		return getNbBoite();
 	}
 	
 	public ListeCarteControlleur getPlusCarte() {

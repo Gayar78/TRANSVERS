@@ -18,30 +18,13 @@ public class Projet extends Boite {
 		this.Listetableau = new ArrayList<Tableau>(0);
 		this.participants = new ArrayList<Membre>(0);
 	}
-
-	/* ajouterTableau
-	 * ne renvoie rien
-	 * paramètre : Tableau
-	 * ajoute le tableau pris en paramètre dans la liste de tableaux du projet
-	 */
-	public void ajouterTableau(Tableau tab) {
-		tab.setId(this.nbTableau);
-		this.Listetableau.add(tab);
-		this.nbTableau ++;
+	
+	public void ajouteTableau(Tableau t) {
+		this.ajouterBoite(t);
 	}
-
-	/* retirertableau
-	 * ne renvoie rien 
-	 * paramètre : indice du tableau de la liste
-	 * retire le tableau indiqué par l'indice pris en paramètre si celui-ci est correct. Envoie une exception dans le cas contraire.
-	 */
-	public void retirerTableau(int id){
-		for(int i = 0; i<Listetableau.size();i++) {
-			int particip = Listetableau.get(i).getId();
-			if(id == particip) {
-				Listetableau.remove(i);
-			}
-		}
+	
+	public void retirerTableau(int id) {
+		this.retirerBoite(id);
 	}
 	
 	/*
@@ -57,7 +40,7 @@ public class Projet extends Boite {
 	}
 	
 	public int getNbTableau() {
-		return this.nbTableau;
+		return getNbBoite();
 	}
 	
 	public void supprimerProjet() {

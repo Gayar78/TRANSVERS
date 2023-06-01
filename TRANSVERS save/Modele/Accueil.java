@@ -20,28 +20,12 @@ public class Accueil extends Boite{
 		this.participants = new ArrayList<Membre>(0);
 	}
 	
-	/*
-	 * procédure ajouterProjet
-	 * prend en paramètre un projet, et l'ajoute à la liste de projets
-	 */
-	public void ajouterProjet(Projet proj) {
-		proj.setId(this.nbProjet);
-		this.ListeProjet.add(proj);
-		this.nbProjet ++;
+	public void ajouteTableau(Projet p) {
+		this.ajouterBoite(p);
 	}
-
-	/*
-	 * procédure retirerProjet
-	 * prend en paramètre un identifiant entier
-	 * supprime le projet qui correspond à l'identifiant indiqué
-	 */
-	public void retirerProjet(int id){
-		for(int i = 0; i<ListeProjet.size();i++) {
-			int particip = ListeProjet.get(i).getId();
-			if(id == particip) {
-				ListeProjet.remove(i);
-			}
-		}
+	
+	public void retirerProjet(int id) {
+		this.retirerBoite(id);
 	}
 	
 	/*
@@ -56,13 +40,6 @@ public class Accueil extends Boite{
 	 */
 	public void setProjets(ArrayList<Projet> projets) {
 		this.ListeProjet = projets;
-	}
-	
-	/*
-	 * getter getNbProjet, renvoie le nombre de projets dans la liste
-	 */
-	public int getNbProjet() {
-		return this.nbProjet;
 	}
 	
 	/*

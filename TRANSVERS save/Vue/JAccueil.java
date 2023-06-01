@@ -1,14 +1,11 @@
 package Vue;
+
 import Modele.*;
-
 import controlleur.*;
-
 import App.*;
-
-
 import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+
 
 import javax.swing.*;
 /*
@@ -16,19 +13,18 @@ import javax.swing.*;
  * Affichage graphique de la classe Accueil
  */
 public class JAccueil extends JBoite{
-	Accueil Parametre;
 	JFrame frame;
 	AccueilControlleur PlusProjet;
-	Map<String, JProjet> ListeProjet;
+	Accueil Parametre;
+	ArrayList<JProjet> ListeProjet;
 	
-	public JAccueil(String nom, JFrame frame){
-		super(nom);
+	public JAccueil(String nom,Accueil boite, JFrame frame){
+		super(nom,boite);
 		this.frame = frame;
+		Parametre = boite;
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
-		ListeProjet = new HashMap<>();
-		
-		this.Parametre = new Accueil(nom);
+		ListeProjet = new ArrayList<JProjet>();
 		
 		AccueilControlleur BTN1 = new AccueilControlleur("BTN1");
 		this.NavBoite.add(BTN1);
@@ -46,22 +42,12 @@ public class JAccueil extends JBoite{
 		add(this.MilieuBoite, BorderLayout.CENTER);
 	}
 	
-	public void ajouterProjet(JProjet p) {
-		this.ListeProjet.put(p.getNom(),p);
-		this.Parametre.ajouterProjet(p.getParametre());
+	public void ajouteProjet(JProjet p) {
+		this.ajouterBoite(p);
 	}
 	
-	public void retirProjet(JProjet p) {
-		for (Map.Entry<String, JProjet> entry : this.ListeProjet.entrySet()) {
-	        if (entry.getValue() == p) {
-	        	this.ListeProjet.remove(entry.getKey());
-	        }
-	    }
-		this.Parametre.retirerProjet(p.getParametre().getId());
-	}
-	
-	public int getNbProjets() {
-		return this.Parametre.getNbProjet();
+	public void retirerProjet(JProjet p) {
+		this.retirBoite(p);
 	}
 	
 	public AccueilControlleur getPlusProjet() {
