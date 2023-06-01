@@ -19,4 +19,5 @@ public class JCarte extends JBoite{
 	public JFrame getFrame() {
 		return this.frame;
 	}
+	//salut
 }
