@@ -45,7 +45,7 @@ public class Carte extends Boite {
      */
     public String getTexteCarte() {
         if(TexteCarte.isEmpty()) {
-            String contenu = "vide";
+            String contenu = "";
             return contenu;
         }
         return TexteCarte;

@@ -1,6 +1,7 @@
 package controlleur;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +22,7 @@ public class BoutonSuppr extends JButton{
 		this.boite = boite;
 		this.setText("Supprimer");
 		this.addActionListener(new eventSuppr(this.InfoPanel));
+		this.setBackground(Color.decode("#ff8888"));
 	}
 	
 	public void supprimer(JPanel InfoPanel,JBoite boite) {

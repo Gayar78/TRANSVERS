@@ -21,8 +21,8 @@ public class ListeCarteControlleur extends BoiteControlleur {
 	        	if(jlist.getNbBoite()<4) {
 					String text = JOptionPane.showInputDialog("Entrez le nom de la carte");
 					Carte carte = new Carte(text);
-					JCarte Jlistecarte = new JCarte (text,carte,jlist.getFrame(),jlist);
-					ActionDePlusBoite(jlist, Jlistecarte);
+					JCarte Jcarte = new JCarte (text,carte,jlist.getFrame(),jlist);
+					ActionDePlusBoite(jlist, Jcarte);
 	        	}
 	        }
 		});

@@ -25,7 +25,8 @@ public class JAccueil extends JBoite{
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		ListeProjet = new ArrayList<JProjet>();
 		
-		AccueilControlleur BTN1 = new AccueilControlleur("BTN1");
+		AccueilControlleur BTN1 = new AccueilControlleur("Retour");
+		BTN1.setEnabled(false);
 		this.NavBoite.add(BTN1);
 		
 		this.PlusBoite = new AccueilControlleur("+");

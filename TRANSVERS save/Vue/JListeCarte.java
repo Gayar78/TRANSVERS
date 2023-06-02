@@ -32,7 +32,7 @@ public class JListeCarte extends JBoite{
 		
 			
 		//ici seront les appels de fonction des controlleurs...
-		//((ListeCarteControlleur) this.PlusBoite).ActionDePlusTableau(this);
+		((ListeCarteControlleur) this.PlusBoite).ActionDePlusCarte(this);
 		RetourTableau.RetourTableau(this, Tableau);
 		
 		
