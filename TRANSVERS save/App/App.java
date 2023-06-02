@@ -1,6 +1,7 @@
 package App;
 
 import java.util.ArrayList;
+import java.awt.Color;
 import javax.swing.*;
 import java.awt.*;
 import Modele.*;
@@ -16,8 +17,8 @@ public class App {
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			this.frame.setSize(longueur, largeur);
 			Accueil accueil = new Accueil("Accueil");
-			JAccueil Jacceuil = new JAccueil("Accueil",accueil,frame);
-			frame.add(Jacceuil, BorderLayout.CENTER);
+			JAccueil Jaccueil = new JAccueil("Accueil",accueil,frame);
+			frame.add(Jaccueil, BorderLayout.CENTER);
 			frame.setVisible(true);
 		}
 		

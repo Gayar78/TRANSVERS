@@ -1,6 +1,7 @@
 package Vue;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -27,9 +28,12 @@ public class JTableau extends JBoite{
 		ListeListeCarte = new ArrayList<JListeCarte>();
 		
 		RetourProjet = new TableauControlleur("Retour Projet");
+		RetourProjet.setBackground(Color.decode("#ffffff"));
 		this.NavBoite.add(RetourProjet);
 		
 		this.PlusBoite = new TableauControlleur("+");
+		this.PlusBoite.setBackground(Color.decode("#03c04a"));
+		this.PlusBoite.setForeground(Color.decode("#ffffff"));
 		this.MilieuBoite.add(PlusBoite);
 		
 			

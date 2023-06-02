@@ -5,6 +5,7 @@ import controlleur.CarteControlleur;
 import controlleur.ListeCarteControlleur;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
@@ -26,42 +27,12 @@ public class JCarte extends JBoite{
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		RetourListeCarte = new CarteControlleur("Retour ListeCarte");
+		RetourListeCarte.setBackground(Color.decode("#ffffff"));
 		this.NavBoite.add(RetourListeCarte);
 		
-		JLabel titre = new JLabel(boite.nom);
-		JLabel description = new JLabel(boite.TexteCarte);
-		JPanel ecrits = new JPanel(new BorderLayout());
-		ecrits.add(titre,BorderLayout.NORTH);
-		ecrits.add(description,BorderLayout.CENTER);
-		JPanel boutons = new JPanel(new BorderLayout());
-		JButton ajouterDesc = new JButton("Ajouter une description");
-		JButton retirerDesc = new JButton("Retirer la description");
-		TextArea text = new TextArea();
-		boutons.add(ajouterDesc);
-		this.MilieuBoite.add(text);
-		this.MilieuBoite.add(ajouterDesc);
-		ajouterDesc.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				boite.setTexteCarte(text.getText());
-				text.setText("");
-				description.setText(boite.getTexteCarte());
-				frame.revalidate();
-				frame.repaint();
-			}
-			
-		});
-		retirerDesc.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				boite.supprimerTexteCarte();
-				description.setText(boite.getTexteCarte());
-				frame.revalidate();
-				frame.repaint();
-			}
-			
-		});
-		this.MilieuBoite.add(retirerDesc);
-		this.MilieuBoite.add(ecrits);
+		
+		//ici seront les appels de fonction des controlleurs...
+		RetourListeCarte.RetourListeCarte(this, ListeCarte);
 		
 		this.NavBoite.setPreferredSize(new Dimension(App.longueur,48));	
 		add(this.NavBoite, BorderLayout.NORTH);

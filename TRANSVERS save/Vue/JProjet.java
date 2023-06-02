@@ -26,9 +26,12 @@ public class JProjet extends JBoite{
 		ListeTableau = new ArrayList<JTableau>();
 		
 		RetourAccueil = new ProjetControlleur("Retour Accueil");
+		RetourAccueil.setBackground(Color.decode("#ffffff"));
 		this.NavBoite.add(RetourAccueil);
 		
 		this.PlusBoite = new ProjetControlleur("+");
+		this.PlusBoite.setBackground(Color.decode("#03c04a"));
+		this.PlusBoite.setForeground(Color.decode("#ffffff"));
 		this.MilieuBoite.add(PlusBoite);
 		
 			

@@ -1,6 +1,7 @@
 package controlleur;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,6 +14,7 @@ public class BoiteControlleur extends JButton{
 	JButton nouveauBouton;
 	public BoiteControlleur(String nom) {
 		super(nom);
+
 	}
 	
 	public void ActionDePlusBoite(JBoite GrosseBoitePanel, JBoite Jboite) {
@@ -20,6 +22,8 @@ public class BoiteControlleur extends JButton{
 	        		if(Jboite.getNom() != null) {
 						GrosseBoitePanel.ajouterBoite(Jboite);
 						nouveauBouton = new JButton(Jboite.getNom());
+						nouveauBouton.setBackground(Color.decode("#3944bc"));
+						nouveauBouton.setForeground(Color.decode("#ffffff"));
 						JPanel InfoBoite = new JPanel(new BorderLayout());
 						BoutonSuppr BoutonSuppr = new BoutonSuppr(GrosseBoitePanel,InfoBoite,Jboite);
 						InfoBoite.add(nouveauBouton,BorderLayout.CENTER);

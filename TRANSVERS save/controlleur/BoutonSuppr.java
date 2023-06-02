@@ -22,7 +22,8 @@ public class BoutonSuppr extends JButton{
 		this.boite = boite;
 		this.setText("Supprimer");
 		this.addActionListener(new eventSuppr(this.InfoPanel));
-		this.setBackground(Color.decode("#ff8888"));
+		this.setBackground(Color.decode("#dc143c"));
+		this.setForeground(Color.decode("#ffffff"));
 	}
 	
 	public void supprimer(JPanel InfoPanel,JBoite boite) {

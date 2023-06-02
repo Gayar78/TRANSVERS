@@ -25,9 +25,12 @@ public class JListeCarte extends JBoite{
 		Cartes = new ArrayList<JCarte>();
 		
 		RetourTableau = new ListeCarteControlleur("Retour Tableau");
+		RetourTableau.setBackground(Color.decode("#ffffff"));
 		this.NavBoite.add(RetourTableau);
 		
 		this.PlusBoite = new ListeCarteControlleur("+");
+		this.PlusBoite.setBackground(Color.decode("#03c04a"));
+		this.PlusBoite.setForeground(Color.decode("#ffffff"));
 		this.MilieuBoite.add(PlusBoite);
 		
 			

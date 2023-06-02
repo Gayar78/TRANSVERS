@@ -18,6 +18,7 @@ public class JMilieu extends JPanel{
 	 */
 	public JMilieu(){
 		super(new GridLayout(1,5));
+		this.setBackground(Color.decode("#000000"));
 		GridLayout layout = (GridLayout) this.getLayout();
 		layout.setHgap(15);
 	}

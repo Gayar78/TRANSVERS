@@ -19,9 +19,11 @@ public class JNav extends JPanel{
 	 */
 	public JNav(String titre){
 		super(new GridLayout(1,3));
+		this.setBackground(Color.decode("#000000"));
 		GridLayout layout = (GridLayout) this.getLayout();
 		layout.setHgap(15);
 		Titre = new JLabel(titre);
+		Titre.setForeground(Color.decode("#ffffff"));
 		Titre.setHorizontalAlignment(JLabel.CENTER);
 		this.add(Titre);
 	}
