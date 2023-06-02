@@ -3,6 +3,7 @@ package Vue;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.*;
 import App.App;
@@ -34,6 +35,7 @@ public class JTableau extends JBoite{
 		this.PlusBoite = new TableauControlleur("+");
 		this.PlusBoite.setBackground(Color.decode("#03c04a"));
 		this.PlusBoite.setForeground(Color.decode("#ffffff"));
+		this.PlusBoite.setFont(new Font("Dialog", Font.PLAIN, 70));
 		this.MilieuBoite.add(PlusBoite);
 		
 			

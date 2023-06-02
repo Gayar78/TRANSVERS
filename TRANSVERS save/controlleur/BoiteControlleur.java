@@ -19,7 +19,6 @@ public class BoiteControlleur extends JButton{
 	
 	public void ActionDePlusBoite(JBoite GrosseBoitePanel, JBoite Jboite) {
 	        	if(GrosseBoitePanel.getNbBoite()<4) {
-	        		if(Jboite.getNom() != null) {
 						GrosseBoitePanel.ajouterBoite(Jboite);
 						nouveauBouton = new JButton(Jboite.getNom());
 						nouveauBouton.setBackground(Color.decode("#3944bc"));
@@ -40,7 +39,6 @@ public class BoiteControlleur extends JButton{
 						GrosseBoitePanel.getMilieu().add(InfoBoite);
 						GrosseBoitePanel.getMilieu().revalidate();
 						GrosseBoitePanel.getMilieu().repaint();
-	        		}
-	        	}		
+	           }		
 	}
 }

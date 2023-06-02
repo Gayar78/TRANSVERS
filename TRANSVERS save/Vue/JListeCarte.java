@@ -31,6 +31,7 @@ public class JListeCarte extends JBoite{
 		this.PlusBoite = new ListeCarteControlleur("+");
 		this.PlusBoite.setBackground(Color.decode("#03c04a"));
 		this.PlusBoite.setForeground(Color.decode("#ffffff"));
+		this.PlusBoite.setFont(new Font("Dialog", Font.PLAIN, 70));
 		this.MilieuBoite.add(PlusBoite);
 		
 			

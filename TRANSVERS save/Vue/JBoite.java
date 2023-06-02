@@ -18,7 +18,6 @@ public class JBoite extends JPanel {
 	public BoiteControlleur PlusBoite;
 	public Boite Parametre;
 	public JFrame frame;
-	public Font fontPlusBoite = new Font("Dialog", Font.PLAIN, 70);
 	/*
 	 * constructeur de la classe JBoite
 	 * initialise une JNav(barre de navigation) et un "milieu" (là où seront affichées les donnéees)
@@ -88,10 +87,6 @@ public class JBoite extends JPanel {
 	
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
-	}
-	
-	public Font getFontPlusBoite() {
-		return this.fontPlusBoite;
 	}
 	
 	public void supprimerBoite() {

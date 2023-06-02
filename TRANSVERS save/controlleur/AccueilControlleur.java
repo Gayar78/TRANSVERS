@@ -18,9 +18,11 @@ public class AccueilControlleur extends BoiteControlleur{
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jacc.getNbBoite()<4) {
 					String text = JOptionPane.showInputDialog("Entrez le nom du projet");
-					Projet projet = new Projet(text);
-					JProjet Jprojet = new JProjet(text,projet,jacc.getFrame(),jacc);
-					ActionDePlusBoite(jacc, Jprojet);
+					if(text != null) {
+						Projet projet = new Projet(text);
+						JProjet Jprojet = new JProjet(text,projet,jacc.getFrame(),jacc);
+						ActionDePlusBoite(jacc, Jprojet);
+					}
 	        	}
 	        }
 		});

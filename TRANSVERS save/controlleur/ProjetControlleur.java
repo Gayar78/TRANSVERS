@@ -17,9 +17,11 @@ public class ProjetControlleur extends BoiteControlleur{
 	        public void actionPerformed(ActionEvent e) {
 	        	if(jProg.getNbBoite()<4) {
 					String text = JOptionPane.showInputDialog("Entrez le nom du tableau");
-					Tableau tableau = new Tableau(text);
-					JTableau Jtableau  = new JTableau (text,tableau,jProg.getFrame(),jProg);
-					ActionDePlusBoite(jProg, Jtableau);
+					if(text != null) {
+						Tableau tableau = new Tableau(text);
+						JTableau Jtableau  = new JTableau (text,tableau,jProg.getFrame(),jProg);
+						ActionDePlusBoite(jProg, Jtableau);
+					}
 	        	}
 	        }
 		});

@@ -32,6 +32,7 @@ public class JAccueil extends JBoite{
 		this.PlusBoite = new AccueilControlleur("+");
 		this.PlusBoite.setBackground(Color.decode("#03c04a"));
 		this.PlusBoite.setForeground(Color.decode("#ffffff"));
+		this.PlusBoite.setFont(new Font("Dialog", Font.PLAIN, 70));
 		this.MilieuBoite.add(PlusBoite);
 		
 			
