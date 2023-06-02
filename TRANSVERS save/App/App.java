@@ -8,8 +8,8 @@ import Vue.*;
 
 public class App {
 	    public JFrame frame;
-		public final static int longueur = 1200;
-		public final static int largeur = 1000;
+		public final static int longueur = 800;
+		public final static int largeur = 600;
 		
 		App(){
 			this.frame = new JFrame("TrelloLite");
