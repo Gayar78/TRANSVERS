@@ -44,7 +44,7 @@ public class JTableau extends JBoite{
 		RetourProjet.RetourProjet(this, Projet);
 		
 		
-		this.NavBoite.setPreferredSize(new Dimension(App.longueur,52));	
+		this.NavBoite.setPreferredSize(new Dimension(App.longueur,60));	
 		add(this.NavBoite, BorderLayout.NORTH);
 		add(this.MilieuBoite, BorderLayout.CENTER);
 	}
