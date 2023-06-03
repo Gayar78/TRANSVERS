@@ -1,4 +1,28 @@
-public static void main(String[] args) {
+package App;
+
+import java.util.ArrayList;
+import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
+import Modele.*;
+import Vue.*;
+
+public class App {
+	    public JFrame frame;
+		public final static int longueur = 800;
+		public final static int largeur = 600;
+		
+		App(){
+			this.frame = new JFrame("TrelloLite");
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			this.frame.setSize(longueur, largeur);
+			Accueil accueil = new Accueil("Accueil");
+			JAccueil Jaccueil = new JAccueil("Accueil",accueil,frame);
+			frame.add(Jaccueil, BorderLayout.CENTER);
+			frame.setVisible(true);
+		}
+		
+	public static void main(String[] args) {
 		try {
 			//############### VARIABLES ######################
 			Carte carte = new Carte("carteTest");
@@ -142,3 +166,4 @@ public static void main(String[] args) {
 		Rendu.frame.setVisible(true);
 
 	}
+}
