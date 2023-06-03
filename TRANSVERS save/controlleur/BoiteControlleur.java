@@ -9,7 +9,7 @@ import javax.swing.*;
 import App.*;
 import Modele.*;
 import Vue.*;
-
+//commentair pour upload sur git.
 public class BoiteControlleur extends JButton{
 	JButton nouveauBouton;
 	public BoiteControlleur(String nom) {

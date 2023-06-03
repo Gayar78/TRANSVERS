@@ -9,7 +9,7 @@ import javax.swing.*;
 
 import Modele.*;
 import Vue.*;
-
+//commentair pour upload sur git.
 public class BoutonSuppr extends JButton{
 	JPanel Milieu;
 	JPanel InfoPanel;
