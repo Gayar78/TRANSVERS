@@ -6,11 +6,11 @@ import javax.swing.*;
 import java.awt.*;
 import Modele.*;
 import Vue.*;
-
+//commentair pour upload sur git.
 public class App {
 	    public JFrame frame;
-		public final static int longueur = 800;
-		public final static int largeur = 600;
+		public final static int longueur = 1100;
+		public final static int largeur = 900;//dimention raisonnable
 		
 		App(){
 			this.frame = new JFrame("TrelloLite");
