@@ -2,7 +2,7 @@ package Modele;
 
 import java.util.ArrayList;
 
-/** @author Timothé Salmon
+/** @author Timothe Salmon
  * 
  * La classe Projet représente un projet qui contient des tableaux.
  */

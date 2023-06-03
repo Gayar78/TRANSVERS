@@ -6,7 +6,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
 
-/**@author Rémi Thibault
+/**@author Remi Thibault
  * 
  * Classe JBoite, étend JPanel.
  * Affichage graphique de la classe Boite.

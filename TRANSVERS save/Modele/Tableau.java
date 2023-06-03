@@ -2,7 +2,7 @@ package Modele;
 
 import java.util.ArrayList;
 
-/**@author Timothé Salmon
+/**@author Timothe Salmon
  * 
  * La classe Tableau représente un tableau qui peut contenir des listes de
  * cartes.

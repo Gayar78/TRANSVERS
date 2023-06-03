@@ -2,7 +2,7 @@ package Modele;
 
 import java.util.ArrayList;
 
-/**@author Rémi Thibault
+/**@author Remi Thibault
  * 
  * La classe Boite est une classe abstraite qui représente une boîte générique.
  * 
@@ -173,7 +173,7 @@ public class Boite {
 
 	/**
 	 * retire un membre de la liste de membres
-	 * @param id, l'identifiant du membre à retirer
+	 * @param Id, l'identifiant du membre à retirer
 	 */
 	public void retirerMembre(int Id) {
 		for (int i = 0; i < participants.size(); i++) {

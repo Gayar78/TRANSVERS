@@ -7,7 +7,7 @@ import javax.swing.*;
 import Modele.*;
 import controlleur.*;
 
-/**@author Rémi Thibault 
+/**@author Remi Thibault 
  * Classe JMilieu, étend JPanel. Affichage graphique du milieu d'une boîte.
  */
 public class JMilieu extends JPanel {

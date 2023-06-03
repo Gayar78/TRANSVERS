@@ -7,7 +7,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
 
-/**@author Timothé Salmon & Rémi Thibault
+/**@author Timothe Salmon et Remi Thibault
  * Classe JProjet, étend JPanel. Affichage graphique de la classe Projet.
  */
 public class JProjet extends JBoite {

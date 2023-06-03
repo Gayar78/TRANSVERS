@@ -13,7 +13,7 @@ import Vue.JCarte;
 import Vue.JListeCarte;
 import Vue.JTableau;
 
-/**@author Rémi Thibault & Ahne Oumar
+/**@author Remi Thibault et Ahne Oumar
  * 
  * Cette classe représente le contrôleur pour une carte dans notre application.
  * 

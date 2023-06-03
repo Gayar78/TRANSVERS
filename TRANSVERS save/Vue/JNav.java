@@ -5,7 +5,7 @@ import controlleur.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-/** @author Rémi Thibault
+/** @author Remi Thibault
  * Classe JNav, étend JPanel. Affichage graphique d'une barre de navigation avec
  * un titre et des boutons utiles.
  */

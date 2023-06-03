@@ -7,7 +7,7 @@ import javax.swing.*;
 import Vue.*;
 import Modele.*;
 
-/**@author Rémi Thibault & Timothé Salmon
+/**@author Remi Thibault et Timothe Salmon
  * 
  * Cette classe représente le contrôleur pour un projet dans notre application.
  * 

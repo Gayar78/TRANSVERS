@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 import App.App;
 
-/**@author Ahne Oumar & Rémi Thibault
+/**@author Ahne Oumar et Remi Thibault
  * Classe JCarte, étend JBoite. Affichage graphique de la classe Carte.
  */
 public class JCarte extends JBoite {

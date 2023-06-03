@@ -9,7 +9,7 @@ import javax.swing.*;
 
 import Modele.*;
 import Vue.*;
-/**@author Timothé Salmon & Rémi Thibault
+/**@author Timothe Salmon et Remi Thibault
 /**
  * 
  * Cette classe représente le bouton de suppression utilisé pour une Boite.

@@ -10,7 +10,7 @@ import App.App;
 import Modele.*;
 import controlleur.*;
 
-/**@author Timothé Salmon & Rémi Thibault
+/**@author Timothe Salmon et Remi Thibault
  * 
  * Classe JTableau, étend JBoite. Affichage graphique de la classe Tableau.
  */

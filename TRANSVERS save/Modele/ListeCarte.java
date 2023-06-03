@@ -2,7 +2,7 @@ package Modele;
 
 import java.util.ArrayList;
 
-/** @Author Dankha Milad
+/** @author Dankha Milad
  * Classe ListeCarte, étends Boite Comme il est possible d'avoir plusieurs
  * listes de cartes dans un tableau, il était nécessaire de faire une classe
  * pour ces dernières.

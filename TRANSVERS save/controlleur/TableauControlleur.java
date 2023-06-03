@@ -9,7 +9,7 @@ import Modele.*;
 import App.*;
 import Vue.*;
 
-/**@author Rémi Thibault & Timothé Salmon
+/**@author Remi Thibault et Timothe Salmon
  * 
  * Cette classe représente le contrôleur pour un tableau dans notre application.
  * 

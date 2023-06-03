@@ -10,7 +10,7 @@ import App.*;
 import Modele.*;
 import Vue.*;
 
-/**@author Rémi Thibault
+/**@author Remi Thibault
  * 
  * Cette classe représente le contrôleur de Boîte dans notre application.
  * 

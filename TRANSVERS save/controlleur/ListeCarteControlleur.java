@@ -9,7 +9,7 @@ import Modele.*;
 import App.*;
 import Vue.*;
 
-/**@author Rémi Thibault & Dankha Milad
+/**@author Remi Thibault et Dankha Milad
  * 
  * Cette classe représente le contrôleur pour la liste de cartes dans notre
  * application.

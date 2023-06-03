@@ -7,7 +7,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
 
-/**@author Dankha Milad & Rémi Thibault
+/**@author Dankha Milad et Remi Thibault
  * Classe JAccueil, étend JPanel. Affichage graphique de la classe Accueil.
  */
 public class JAccueil extends JBoite {

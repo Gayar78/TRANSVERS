@@ -7,7 +7,8 @@ import App.App;
 import Modele.*;
 import controlleur.*;
 
-/**@author Rémi Thibault & Dankha Milad
+/**@author Remi Thibault et Dankha Milad
+ * 
  * Classe JListeCarte, étend JBoite. Affichage graphique de la classe
  * ListeCarte.
  */

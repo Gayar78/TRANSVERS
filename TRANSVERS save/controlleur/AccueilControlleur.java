@@ -5,7 +5,7 @@ import Modele.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-/**@author Timothé Salmon & Rémi Thibault & Dankha Milad & Ahne Oumar
+/**@author Timothe Salmon et Remi Thibault et Dankha Milad et Ahne Oumar
  * 
  * Cette classe représente le contrôleur pour l'accueil dans notre application.
  * 

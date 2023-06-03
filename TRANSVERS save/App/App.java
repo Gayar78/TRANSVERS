@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import Modele.*;
 import Vue.*;
-/**@author Timothé Salmon & Rémi Thibault & Dankha Milad & Ahne Oumar
+/**@author Timothe Salmon et Remi Thibault et Dankha Milad et Ahne Oumar
 */
 /**
  * Classe principale de l'application TrelloLite.
