@@ -4,6 +4,7 @@ import javax.swing.*;
 import controlleur.*;
 import java.awt.*;
 import java.util.ArrayList;
+//commentair pour upload sur git.
 /*
  * Classe JNav, étends JPanel
  * Affichage graphique d'une barre de navigation, avec notamment un titre et des boutons utiles
@@ -23,6 +24,7 @@ public class JNav extends JPanel{
 		GridLayout layout = (GridLayout) this.getLayout();
 		layout.setHgap(15);
 		Titre = new JLabel(titre);
+		Titre.setFont(new Font("Dialog", Font.PLAIN, 25));
 		Titre.setForeground(Color.decode("#ffffff"));
 		Titre.setHorizontalAlignment(JLabel.CENTER);
 		this.add(Titre);

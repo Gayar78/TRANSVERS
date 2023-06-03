@@ -6,6 +6,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.Color;
+//commentair pour upload sur git.
 /*
  * Classe JBoite, étends Jpanel
  * Affichage graphique de la classe Boite

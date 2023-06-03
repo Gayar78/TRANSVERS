@@ -6,6 +6,7 @@ import App.*;
 import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
+//commentair pour upload sur git.
 /*
  * Classe JAccueil, étends JPanel
  * Affichage graphique de la classe Accueil

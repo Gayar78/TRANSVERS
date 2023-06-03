@@ -9,7 +9,7 @@ import javax.swing.*;
 import App.App;
 import Modele.*;
 import controlleur.*;
-
+//commentair pour upload sur git.
 /*
  * Classe JTableau, étends JBoite
  * Affichage graphique de la classe Tableau

@@ -7,7 +7,7 @@ import javax.swing.*;
 
 import Modele.*;
 import controlleur.*;
-
+//commentair pour upload sur git.
 public class JMilieu extends JPanel{
 	int nbComposant;
 	String titre;
