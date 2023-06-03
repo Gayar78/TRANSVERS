@@ -1,7 +1,7 @@
 package Modele;
 
 import java.util.ArrayList;
-
+//commentair pour upload sur git.
 /*
  * Classe abstraite boite : Permet de faire des boites pour séparer les données et les afficher comme on le souhaite.
  * Chaque boite (ie : Accueil, Projet, Tableau, ListeCarte et Carte) possède un nom et des membres et listes de membres

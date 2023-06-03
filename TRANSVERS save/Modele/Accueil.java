@@ -1,7 +1,7 @@
 package Modele;
 
 import java.util.ArrayList;
-
+//commentair pour upload sur git.
 /*
  * Classe Accueil, étends la classe boite
  * créé un accueil, notamment avec une liste de projets, et une liste de membres.
@@ -20,7 +20,7 @@ public class Accueil extends Boite{
 		this.participants = new ArrayList<Membre>(0);
 	}
 	
-	public void ajouteTableau(Projet p) {
+	public void ajouteProjet(Projet p) {
 		this.ajouterBoite(p);
 	}
 	

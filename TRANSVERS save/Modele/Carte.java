@@ -1,7 +1,7 @@
 package Modele;
 
 import java.util.ArrayList;
-
+//commentair pour upload sur git.
 /*
  * Classe Carte, étends Boite
  * Le dernier étage de l'application, une carte qui indique un status (urgent ou non par exemple), et un texte.
@@ -16,10 +16,10 @@ public class Carte extends Boite {
      */
     public Carte(String nom) {
         super(nom);
-        this.ListeStatusCarte.add("Rien");
-        this.ListeStatusCarte.add("Vert");
-        this.ListeStatusCarte.add("Orange");
-        this.ListeStatusCarte.add("Rouge");
+        this.ListeStatusCarte.add("Commencer");
+        this.ListeStatusCarte.add("Terminé");
+        this.ListeStatusCarte.add("En cours");
+        this.ListeStatusCarte.add("Retard");
         this.StatusCarte = ListeStatusCarte.get(0);
     }
 /*
@@ -50,6 +50,11 @@ public class Carte extends Boite {
         }
         return TexteCarte;
     }
+    
+    public ArrayList<String> getListeStatus() {
+    	return ListeStatusCarte;
+    }
+    
     /*
      * procédure supprimerTexteCarte
      * vide le texte d'une carte

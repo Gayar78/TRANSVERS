@@ -1,4 +1,5 @@
 package Modele;
+//commentair pour upload sur git.
 import java.util.ArrayList;
 /*
  * classe Tableau, étends Boite

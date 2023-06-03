@@ -1,4 +1,5 @@
 package Modele;
+//commentair pour upload sur git.
 /*
  * Classe Membre
  * définit un membre, qui pourra participer à un projet, à un tableau, à une liste de cartes, ou à une carte en particulier.
