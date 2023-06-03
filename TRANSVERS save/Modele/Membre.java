@@ -1,8 +1,9 @@
 package Modele;
-//commentair pour upload sur git.
-/*
- * Classe Membre
- * définit un membre, qui pourra participer à un projet, à un tableau, à une liste de cartes, ou à une carte en particulier.
+
+/**@author Ahne Oumar
+ * 
+ * La classe Membre représente un membre qui peut participer à un projet, à un
+ * tableau, à une liste de cartes ou à une carte spécifique.
  */
 public class Membre {
 	private String nomMembre;
@@ -11,105 +12,156 @@ public class Membre {
 	private int id;
 	private boolean chef;
 
-	/*
-	 * constructeur de la classe Membre
-	 * initialise les informations du membre, et si ce membre est un chef d'une liste de membres.
+	/**
+	 * 
+	 * Constructeur de la classe Membre. Initialise les informations du membre et
+	 * définit si le membre est un chef d'une liste de membres.
+	 * 
+	 * @param nom    le nom du membre
+	 * @param prenom le prénom du membre
 	 */
 	public Membre(String nom, String prenom) {
 		this.nomMembre = nom;
 		this.prenomMembre = prenom;
 		this.chef = false;
 	}
-	
-	/*
-	 * second constructeur de la classe Membre
-	 * Si l'utilisateur a renseigné un email, on l'initialise également. Pour le reste, ce constructeur est identique au dernier.
+
+	/**
+	 * 
+	 * Deuxième constructeur de la classe Membre. Si un email est spécifié, il est
+	 * également initialisé. Pour le reste, ce constructeur est identique au
+	 * précédent.
+	 * 
+	 * @param nom    le nom du membre
+	 * @param prenom le prénom du membre
+	 * @param email  l'email du membre
 	 */
 	public Membre(String nom, String prenom, String email) {
 		this.nomMembre = nom;
 		this.prenomMembre = prenom;
 		this.emailMembre = email;
 		this.chef = false;
-	}	
+	}
 
-	/*
-	 * getter getNomMembre, renvoie le nom d'un membre
+	/**
+	 * 
+	 * Getter pour obtenir le nom d'un membre.
+	 * 
+	 * @return le nom du membre
 	 */
 	public String getNomMembre() {
 		return nomMembre;
 	}
-/*
- * setter setNomMembre, initialise le nom d'un membre
- */
+
+	/**
+	 * 
+	 * Setter pour initialiser le nom d'un membre.
+	 * 
+	 * @param nomMembre le nom du membre à définir
+	 */
 	public void setNomMembre(String nomMembre) {
 		this.nomMembre = nomMembre;
 	}
-/*
- * getter getPrenomMembre, renvoie le prénom d'un membre
- */
+
+	/**
+	 * 
+	 * Getter pour obtenir le prénom d'un membre.
+	 * 
+	 * @return le prénom du membre
+	 */
 	public String getPrenomMembre() {
 		return prenomMembre;
 	}
-/*
- * setter setPrenomMembre, initialise le prénom d'un membre
- */
+
+	/**
+	 * 
+	 * Setter pour initialiser le prénom d'un membre.
+	 * 
+	 * @param prenomMembre le prénom du membre à définir
+	 */
 	public void setPrenomMembre(String prenomMembre) {
 		this.prenomMembre = prenomMembre;
 	}
-/*
- * getter getEmailMembre, renvoie l'email d'un membre
- */
+
+	/**
+	 * 
+	 * Getter pour obtenir l'email d'un membre.
+	 * 
+	 * @return l'email du membre
+	 */
 	public String getEmailMembre() {
 		return emailMembre;
 	}
-/*
- * setter setEmailMembre, initialise l'email d'un membre
- */
+
+	/**
+	 * 
+	 * Setter pour initialiser l'email d'un membre.
+	 * 
+	 * @param emailMembre l'email du membre à définir
+	 */
 	public void setEmailMembre(String emailMembre) {
 		this.emailMembre = emailMembre;
 	}
-	/*
-	 * getter getId, renvoie l'ID d'un membre
+
+	/**
+	 * 
+	 * Getter pour obtenir l'ID d'un membre.
+	 * 
+	 * @return l'ID du membre
 	 */
 	public int getId() {
 		return this.id;
 	}
-	/*
-	 * setter setId, initialise l'ID d'un membre
+
+	/**
+	 * 
+	 * Setter pour initialiser l'ID d'un membre.
+	 * 
+	 * @param id l'ID du membre à définir
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
-	/*
-	 * procédure supprimer membre
-	 * détruit le membre
+
+	/**
+	 * 
+	 * Supprime le membre en appelant la méthode finalize.
 	 */
-	public void supprimerMembre(){//Méthode qui utilise le DESTRUCTEUR
-		this.finalize();
+	public void supprimerMembre() {
+		finalize();
 	}
-	/*
-	 * procédure devientChef
-	 * fait d'un membre un chef
+
+	/**
+	 * 
+	 * Transforme un membre en chef.
 	 */
 	public void devientChef() {
 		this.chef = true;
 	}
-	/*
-	 * procédure devientMembre
-	 * fait d'un chef un membre
+
+	/**
+	 * 
+	 * Transforme un chef en simple membre.
 	 */
 	public void devientMembre() {
 		this.chef = false;
 	}
-	/*
-	 * getter getChef, renvoie un booléen qui indique si un membre est chef ou non
+
+	/**
+	 * 
+	 * Getter pour vérifier si un membre est chef ou non.
+	 * 
+	 * @return true si le membre est chef, false sinon
 	 */
-	public boolean getChef() {//pas de setChef ici !!
+	public boolean getChef() {
 		return this.chef;
 	}
-	
-	public void finalize() {//DESTRUCTEUR Java
-		//System.out.print("Elément Membre détruit !");  
-	}
 
+	/**
+	 * 
+	 * Méthode finalize pour détruire le membre.
+	 */
+	public void finalize() {
+// Actions de nettoyage ou de libération des ressources
+	}
 }

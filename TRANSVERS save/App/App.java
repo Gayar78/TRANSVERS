@@ -1,30 +1,51 @@
 package App;
 
 import java.util.ArrayList;
-import java.awt.Color;
 import javax.swing.*;
 import java.awt.*;
 import Modele.*;
 import Vue.*;
-//commentair pour upload sur git.
+/**@author Timothé Salmon & Rémi Thibault & Dankha Milad & Ahne Oumar
+*/
+/**
+ * Classe principale de l'application TrelloLite.
+ */
+
 public class App {
-	    public JFrame frame;
-		public final static int longueur = 1100;
-		public final static int largeur = 900;//dimention raisonnable
-		
-		App(){
-			this.frame = new JFrame("TrelloLite");
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			this.frame.setSize(longueur, largeur);
-			Accueil accueil = new Accueil("Accueil");
-			JAccueil Jaccueil = new JAccueil("Accueil",accueil,frame);
-			frame.add(Jaccueil, BorderLayout.CENTER);
-			frame.setVisible(true);
-		}
-		
+	/**
+	 * Fenêtre principale de l'application.
+	 */
+	public JFrame frame;
+	/**
+	 * Longueur de la fenêtre principale.
+	 */
+	public final static int longueur = 800;
+	/**
+	 * Largeur de la fenêtre principale.
+	 */
+	public final static int largeur = 600;
+
+	/**
+	 * Constructeur de la classe App.
+	 */
+	App() {
+		this.frame = new JFrame("TrelloLite");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.frame.setSize(longueur, largeur);
+		Accueil accueil = new Accueil("Accueil");
+		JAccueil Jaccueil = new JAccueil("Accueil", accueil, frame);
+		frame.add(Jaccueil, BorderLayout.CENTER);
+		frame.setVisible(true);
+	}
+
+	/**
+	 * Main de l'application, avec tests de fonctions du package Modele
+	 * 
+	 * @param args les arguments de la ligne de commande
+	 */
 	public static void main(String[] args) {
 		try {
-			//############### VARIABLES ######################
+			// ############### VARIABLES ######################
 			Carte carte = new Carte("carteTest");
 			ListeCarte liste = new ListeCarte("listeCarteTest");
 			Membre membre0 = new Membre("nomTest", "prenomTest", "emailTest");
@@ -44,12 +65,12 @@ public class App {
 			System.out.println("---------- Tests de la classe ListeCarte ----------");
 			liste.ajouteCarte(carte);
 			System.out.print("AjouterCarte  : ");
-			if (liste.getCartes().size() == 1) {
+			if (liste.getNbCarte() == 1) {
 				System.out.println("         OK");
 			} else {
 				System.out.println("       ERR");
 			}
-			/*Test de retirerTableau*/
+			/* Test de retirerTableau */
 			liste.retirerCarte(0);
 			System.out.print("RetirerCarte  : ");
 			if (liste.getCartes().size() == 0) {
@@ -71,10 +92,9 @@ public class App {
 			liste.retirerMembre(1);
 			liste.retirerMembre(2);
 			System.out.print("RetirerMembreListe : ");
-			if(liste.getMembres().size()==0) {
+			if (liste.getMembres().size() == 0) {
 				System.out.println("    OK");
-			}
-			else {
+			} else {
 				System.out.println("    ERR");
 			}
 			System.out.println("");
@@ -87,18 +107,17 @@ public class App {
 				System.out.println("       ERR");
 			}
 			tab.ajouteListeCarte(list);
-			System.out.print("AjouterListe : ");
-			if (tab.getListesCartes().size() == 1) {
-				System.out.println("          OK");
+			System.out.print("AjouterListeCarte : ");
+			if (tab.getNbListeCarte() == 1) {
+				System.out.println("     OK");
 			} else {
 				System.out.println("          ERR");
 			}
 			tab.retirerListeCarte(0);
 			System.out.print("RetirerListe : ");
-			if(tab.getListesCartes().size()==0) {
+			if (tab.getListesCartes().size() == 0) {
 				System.out.println("          OK");
-			}
-			else {
+			} else {
 				System.out.println("          ERR");
 			}
 			tab.ajouterMembre(membre0);
@@ -114,56 +133,50 @@ public class App {
 			tab.retirerMembre(1);
 			tab.retirerMembre(2);
 			System.out.print("RetirerMembreTab : ");
-			if(tab.getMembres().size()==0) {
+			if (tab.getMembres().size() == 0) {
 				System.out.println("      OK");
-			}
-			else {
+			} else {
 				System.out.println("      ERR");
 			}
 			System.out.println("");
 			System.out.println("------------- Tests de la classe Projet --------------");
 			proj.ajouteTableau(tab);
 			System.out.printf("Ajoutertableau : ");
-			if(proj.getTableaux().size()==1) {
+			if (proj.getNbTableau() == 1) {
 				System.out.println("        OK");
-			}
-			else {
+			} else {
 				System.out.println("        ERR");
 			}
 			proj.retirerTableau(0);
 			System.out.printf("RetirerTableau : ");
-			if(proj.getTableaux().size()==0) {
+			if (proj.getNbTableau() == 0) {
 				System.out.println("        OK");
-			}
-			else {
+			} else {
 				System.out.println("        ERR");
 			}
 			listeMembreTest.add(membre0);
 			listeMembreTest.add(membre1);
 			proj.ajouterListeMembres(listeMembreTest);
 			System.out.printf("AjouterListeMembreProj : ");
-			if(proj.tailleListeMembre()==2) {
+			if (proj.tailleListeMembre() == 2) {
 				System.out.println("OK");
-			}
-			else {
+			} else {
 				System.out.println("ERR");
 			}
 			proj.retirerListMembre(listeMembreTest);
 			System.out.printf("RetirerListeMembreProj : ");
-			if(proj.getMembres().size()==0) {
+			if (proj.getMembres().size() == 0) {
 				System.out.println("OK");
-			}
-			else {
+			} else {
 				System.out.println("ERR");
 			}
 		} catch (Exception e) {
-		 e.printStackTrace();
+			e.printStackTrace();
 		}
 		System.out.println("");
 		System.out.println("################### FIN TESTS ###################");
-		
+
 		App Rendu = new App();
 		Rendu.frame.setVisible(true);
-
 	}
 }
