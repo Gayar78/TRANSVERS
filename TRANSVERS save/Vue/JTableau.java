@@ -32,6 +32,7 @@ public class JTableau extends JBoite {
 		super("Tableau : " + nom, boite, frame);
 		this.frame = frame;
 		Parametre = boite;
+		this.GestionMembre = new JListeMembre(this);
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
@@ -51,9 +52,18 @@ public class JTableau extends JBoite {
 		((TableauControlleur) this.PlusBoite).ActionDePlusListeCarte(this);
 		RetourProjet.RetourProjet(this, Projet);
 
-		this.NavBoite.setPreferredSize(new Dimension(App.longueur,60));
-		add(this.NavBoite, BorderLayout.NORTH);
-		add(this.MilieuBoite, BorderLayout.CENTER);
+		this.NavBoite.setPreferredSize(new Dimension((App.longueur/3)*2, 60));
+		Gauche.add(this.NavBoite, BorderLayout.NORTH);
+		Gauche.add(this.MilieuBoite, BorderLayout.CENTER);
+		
+		this.GestionMembre = new JListeMembre(this);
+		this.GestionMembre.getAjouterMembre().AjouterMembre(this);
+		this.GestionMembre.getAjouterMembre().RetirerMembre(this);
+        this.Droite.add(this.GestionMembre);
+		this.Droite.setPreferredSize(new Dimension(App.longueur/3, App.largeur));
+		
+		add(this.Gauche,BorderLayout.WEST);
+        add(this.Droite,BorderLayout.CENTER);
 	}
 
 	/**

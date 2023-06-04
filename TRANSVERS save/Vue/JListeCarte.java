@@ -30,6 +30,7 @@ public class JListeCarte extends JBoite {
 		super("Liste de Carte : " + nom, boite, frame);
 		this.frame = frame;
 		Parametre = boite;
+		this.GestionMembre = new JListeMembre(this);
 		NavBoite.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 		MilieuBoite.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		Cartes = new ArrayList<JCarte>();
@@ -48,9 +49,18 @@ public class JListeCarte extends JBoite {
 		((ListeCarteControlleur) this.PlusBoite).ActionDePlusCarte(this);
 		RetourTableau.RetourTableau(this, Tableau);
 
-		this.NavBoite.setPreferredSize(new Dimension(App.longueur, 60));
-		add(this.NavBoite, BorderLayout.NORTH);
-		add(this.MilieuBoite, BorderLayout.CENTER);
+		this.NavBoite.setPreferredSize(new Dimension((App.longueur/3)*2, 60));
+		Gauche.add(this.NavBoite, BorderLayout.NORTH);
+		Gauche.add(this.MilieuBoite, BorderLayout.CENTER);
+		
+		this.GestionMembre = new JListeMembre(this);
+		this.GestionMembre.getAjouterMembre().AjouterMembre(this);
+		this.GestionMembre.getAjouterMembre().RetirerMembre(this);
+        this.Droite.add(this.GestionMembre);
+		this.Droite.setPreferredSize(new Dimension(App.longueur/3, App.largeur));
+		
+		add(this.Gauche,BorderLayout.WEST);
+        add(this.Droite,BorderLayout.CENTER);
 	}
 
 	/**

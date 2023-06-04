@@ -1,22 +1,13 @@
 package Vue;
 
 import Modele.*;
-import controlleur.CarteControlleur;
-import controlleur.ListeCarteControlleur;
+import controlleur.*;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.TextArea;
+import java.awt.*;
 
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-import App.App;
+import App.*;
 
 /**@author Ahne Oumar et Remi Thibault
  * Classe JCarte, étend JBoite. Affichage graphique de la classe Carte.

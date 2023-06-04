@@ -31,6 +31,7 @@ public class Boite {
 		this.nom = nom;
 		this.ListeBoite = new ArrayList<>();
 		this.nbBoite = 0;
+		this.indentation = 0;
 	}
 
 	/**
@@ -155,6 +156,7 @@ public class Boite {
 	 */
 	public void ajouterMembre(Membre membre) {
 		membre.setId(this.indenteNbMembre());
+		System.out.println(membre.getId());
 		this.participants.add(membre);
 		this.indentation++;
 	}
@@ -192,6 +194,10 @@ public class Boite {
 		for (Membre m : listmembre) {
 			retirerMembre(m.getId());
 		}
+	}
+	
+	public int getIndentation() {
+		return this.indentation;
 	}
 
 	/**

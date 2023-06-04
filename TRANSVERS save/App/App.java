@@ -19,7 +19,7 @@ public class App {
 	/**
 	 * Longueur de la fenêtre principale.
 	 */
-	public final static int longueur = 800;
+	public final static int longueur = 800+270;
 	/**
 	 * Largeur de la fenêtre principale.
 	 */

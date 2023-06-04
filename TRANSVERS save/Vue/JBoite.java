@@ -19,6 +19,10 @@ public class JBoite extends JPanel {
     public BoiteControlleur PlusBoite;
     public Boite Parametre;
     public JFrame frame;
+    
+    public JPanel Gauche;
+    public JPanel Droite;
+    public JListeMembre GestionMembre;
 
     /**
      * Constructeur de la classe JBoite.
@@ -36,6 +40,8 @@ public class JBoite extends JPanel {
         this.MilieuBoite = new JMilieu();
         this.ListeBoite = new ArrayList<JBoite>();
         this.PlusBoite = new BoiteControlleur(null);
+        this.Gauche = new JPanel(new BorderLayout());
+        this.Droite = new JPanel(new GridLayout(1,1));
     }
 
     /**
@@ -152,7 +158,10 @@ public class JBoite extends JPanel {
     public void setFrame(JFrame frame) {
         this.frame = frame;
     }
-
+    public JListeMembre getGestionMembre() {
+    	return this.GestionMembre;
+    }
+    
     /**
      * Supprime la boîte.
      */
