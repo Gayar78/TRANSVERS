@@ -58,7 +58,7 @@ public class JCarte extends JBoite {
 		explicationStatus = new JLabel("Status de la Carte");
 		explicationStatus.setHorizontalAlignment(JLabel.CENTER);
 		explicationStatus.setForeground(Color.decode("#ffffff"));
-		explicationStatus.setFont(new Font("Dialog", Font.PLAIN, 50));
+		explicationStatus.setFont(new Font("Dialog", Font.PLAIN, 35));
 
 		CarteControlleur Rien = new CarteControlleur("Commencer");
 		Rien.setBackground(Color.decode("#aaaaaa"));

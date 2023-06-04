@@ -47,7 +47,7 @@ public class JProjet extends JBoite {
 		((ProjetControlleur) this.PlusBoite).ActionDePlusTableau(this);
 		RetourAccueil.RetourAccueil(this, Accueil);
 
-		this.NavBoite.setPreferredSize(new Dimension(App.longueur, 56));
+		this.NavBoite.setPreferredSize(new Dimension(App.longueur, 60));
 		add(this.NavBoite, BorderLayout.NORTH);
 		add(this.MilieuBoite, BorderLayout.CENTER);
 	}

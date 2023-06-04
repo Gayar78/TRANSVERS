@@ -48,7 +48,7 @@ public class JListeCarte extends JBoite {
 		((ListeCarteControlleur) this.PlusBoite).ActionDePlusCarte(this);
 		RetourTableau.RetourTableau(this, Tableau);
 
-		this.NavBoite.setPreferredSize(new Dimension(App.longueur, 48));
+		this.NavBoite.setPreferredSize(new Dimension(App.longueur, 60));
 		add(this.NavBoite, BorderLayout.NORTH);
 		add(this.MilieuBoite, BorderLayout.CENTER);
 	}
